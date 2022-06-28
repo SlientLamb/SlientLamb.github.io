@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://slientlamb.github.io/zh-cn/categories/</loc>
+    <loc>http://SlientLamb.github.io/zh-cn/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://slientlamb.github.io/categories/"
+                href="http://SlientLamb.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://slientlamb.github.io/ar/categories/"
+                href="http://SlientLamb.github.io/ar/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://slientlamb.github.io/zh-cn/categories/"
+                href="http://SlientLamb.github.io/zh-cn/categories/"
                 />
   </url><url>
-    <loc>https://slientlamb.github.io/zh-cn/tags/</loc>
+    <loc>http://SlientLamb.github.io/zh-cn/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://slientlamb.github.io/tags/"
+                href="http://SlientLamb.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://slientlamb.github.io/ar/tags/"
+                href="http://SlientLamb.github.io/ar/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://slientlamb.github.io/zh-cn/tags/"
+                href="http://SlientLamb.github.io/zh-cn/tags/"
                 />
   </url><url>
-    <loc>https://slientlamb.github.io/zh-cn/</loc>
+    <loc>http://SlientLamb.github.io/zh-cn/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://slientlamb.github.io/"
+                href="http://SlientLamb.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://slientlamb.github.io/ar/"
+                href="http://SlientLamb.github.io/ar/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://slientlamb.github.io/zh-cn/"
+                href="http://SlientLamb.github.io/zh-cn/"
                 />
   </url>
 </urlset>
