@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://slientlamb.github.io/categories/</loc>
-    <lastmod>2022-06-28T23:13:38+08:00</lastmod>
+    <lastmod>2022-07-13T14:59:29+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -21,7 +21,7 @@
                 />
   </url><url>
     <loc>https://slientlamb.github.io/</loc>
-    <lastmod>2022-06-28T23:13:38+08:00</lastmod>
+    <lastmod>2022-07-13T14:59:29+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -39,16 +39,13 @@
                 />
   </url><url>
     <loc>https://slientlamb.github.io/post/</loc>
-    <lastmod>2022-06-28T23:13:38+08:00</lastmod>
+    <lastmod>2022-07-13T14:59:29+08:00</lastmod>
   </url><url>
-    <loc>https://slientlamb.github.io/p/%E5%AF%86%E8%AF%84%E4%B8%80/</loc>
-    <lastmod>2022-06-28T23:13:38+08:00</lastmod>
-  </url><url>
-    <loc>https://slientlamb.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2022-06-28T23:13:38+08:00</lastmod>
+    <loc>https://slientlamb.github.io/p/qa-windows%E4%B8%8B%E4%BD%BF%E7%94%A8wget%E7%AD%89linux%E5%91%BD%E4%BB%A4-godzilla%E7%9B%AE%E5%BD%95%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95/</loc>
+    <lastmod>2022-07-13T14:59:29+08:00</lastmod>
   </url><url>
     <loc>https://slientlamb.github.io/tags/</loc>
-    <lastmod>2022-06-16T09:27:27+08:00</lastmod>
+    <lastmod>2022-07-13T14:59:29+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -65,6 +62,18 @@
                 href="https://slientlamb.github.io/tags/"
                 />
   </url><url>
+    <loc>https://slientlamb.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2022-07-13T14:59:29+08:00</lastmod>
+  </url><url>
+    <loc>https://slientlamb.github.io/tags/%E7%BB%8F%E9%AA%8C/</loc>
+    <lastmod>2022-07-13T14:59:29+08:00</lastmod>
+  </url><url>
+    <loc>https://slientlamb.github.io/tags/%E5%AF%86%E8%AF%84/</loc>
+    <lastmod>2022-06-28T23:13:38+08:00</lastmod>
+  </url><url>
+    <loc>https://slientlamb.github.io/p/%E5%AF%86%E8%AF%84%E4%B8%80/</loc>
+    <lastmod>2022-06-28T23:13:38+08:00</lastmod>
+  </url><url>
     <loc>https://slientlamb.github.io/p/%E5%B0%8F%E5%8C%BA%E5%90%8E%E9%97%A8%E7%9A%84%E9%B8%AD%E8%84%96%E6%91%8A/</loc>
     <lastmod>2022-06-16T09:27:27+08:00</lastmod>
   </url><url>
@@ -73,7 +82,5 @@
   </url><url>
     <loc>https://slientlamb.github.io/categories/%E9%81%87%E8%A7%81/</loc>
     <lastmod>2022-06-16T09:27:27+08:00</lastmod>
-  </url><url>
-    <loc>https://slientlamb.github.io/tags/%E7%BB%8F%E9%AA%8C/</loc>
   </url>
 </urlset>
