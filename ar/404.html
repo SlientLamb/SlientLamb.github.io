@@ -11,7 +11,23 @@
 <meta property='og:site_name' content='موقع تجريبي'>
 <meta property='og:type' content='website'>
 <meta name="twitter:title" content="404 Page not found">
-<meta name="twitter:description" content="Let&#39;s try to enjoy.">
+<meta name="twitter:description" content="Let&#39;s try to enjoy."><style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script>
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap";
+		
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
     </head>
     <body class="">
     <script>
@@ -58,6 +74,8 @@
                     
                 
                 </a>
+                
+                    <span class="emoji">🐶</span>
                 
             </figure>
             
@@ -148,9 +166,9 @@
 
                     <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
                         
-                            <option value="https://slientlamb.github.io/" >English</option>
+                            <option value="https://slientlamb.github.io/en/" >English</option>
                         
-                            <option value="https://slientlamb.github.io/zh-cn/" >中文</option>
+                            <option value="https://slientlamb.github.io/" >中文</option>
                         
                             <option value="https://slientlamb.github.io/ar/" selected>عربي</option>
                         
