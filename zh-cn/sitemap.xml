@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://slientlamb.github.io/</loc>
-    <lastmod>2022-08-01T13:18:40+00:00</lastmod>
+    <lastmod>2022-10-19T03:50:37+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -21,7 +21,13 @@
                 />
   </url><url>
     <loc>https://slientlamb.github.io/post/</loc>
-    <lastmod>2022-08-01T13:18:40+00:00</lastmod>
+    <lastmod>2022-10-19T03:50:37+00:00</lastmod>
+  </url><url>
+    <loc>https://slientlamb.github.io/p/qa-%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81-hugo-git/</loc>
+    <lastmod>2022-10-19T03:50:37+00:00</lastmod>
+  </url><url>
+    <loc>https://slientlamb.github.io/p/%E5%81%9C%E6%AD%A2%E8%AE%B0%E5%BD%95%E7%9A%84%E8%BF%99%E4%B8%80%E4%B8%A4%E4%B8%AA%E6%9C%88/</loc>
+    <lastmod>2022-10-19T01:01:57+00:00</lastmod>
   </url><url>
     <loc>https://slientlamb.github.io/p/qa-%E5%AE%89%E8%A3%85webgoatsource-codedocker%E7%AB%AF%E5%8F%A3%E4%B8%8Epid/</loc>
     <lastmod>2022-08-01T13:18:40+00:00</lastmod>
