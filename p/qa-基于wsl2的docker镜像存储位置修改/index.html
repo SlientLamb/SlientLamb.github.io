@@ -17,7 +17,7 @@ WSL备份与还原'><title>Q&amp;A  基于WSL2的Docker镜像存储位置修改<
 WSL备份与还原'>
 <meta property='og:url' content='https://slientlamb.github.io/p/qa-%E5%9F%BA%E4%BA%8Ewsl2%E7%9A%84docker%E9%95%9C%E5%83%8F%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9/'>
 <meta property='og:site_name' content='LAKE'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-07-26T08:12:18&#43;00:00'/><meta property='article:modified_time' content='2022-07-26T08:12:18&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-05-06T13:42:50&#43;00:00'/><meta property='article:modified_time' content='2023-05-06T13:42:50&#43;00:00'/>
 <meta name="twitter:title" content="Q&amp;A  基于WSL2的Docker镜像存储位置修改">
 <meta name="twitter:description" content="Q:基于WSL2的docker软件没有给出调整镜像存放位置的功能，需要我们手动的来调整 A: 1、wsl -l -v --all查询所有wsl子系统状态2、关闭Docker3、导出WSL系统wsl --export docker-desktop /目录/目标文件.tarwsl --export docker-desktop-data /目录/目标文件.tar4、把导出的tar文件放入新建目的目录中5、导入wsl --import docker-desktop F:\Docker\docker-desktop F:\docker-desktop.tar --version 2wsl --import docker-desktop-data F:\Docker\docker-desktop-data F:\docker-desktop-data.tar --version 2硬盘镜像文件已经迁移过来了。 C：WSL子系统的备份和还原 终止正在运行的wsl wsl --shutdown
 将需要迁移的Linux，进行导出 wsl --export kali-linux F:/kali.tar
@@ -242,7 +242,7 @@ WSL备份与还原"><style>
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jul 26, 2022</time>
+                <time class="article-time--published">May 06, 2023</time>
             </div>
         
 
@@ -443,7 +443,7 @@ WSL备份与还原"><style>
         
             2020 - 
         
-        2022 LAKE
+        2024 LAKE
     </section>
     
     <section class="powerby">

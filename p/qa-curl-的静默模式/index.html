@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='问题概述：在Apache的日志中毒攻击中，使用curl访问附带payload的url不会被执行，但是使用-s参数会被执行，查看帮助文档只能发现是静默模式，没有更多解释。
+curl -s -s 选项代表“静默”或“安静”模式，这意味着在请求期间该命令不会显示任何进度或错误消息。这对于编写脚本或自动化任务很有用，因为不会产生杂乱的输出干扰结果。
+Q1： 为什么使用curl访问http://192.168.1.1:1/index.php?file=../../../../../var/log/apache2/access.log&amp;amp;cmd=whoami不成功，但是加上-s能成功执行whoami A1： 这是因为在访问http://192.168.1.1:1/index.php?file=../../../../../var/log/apache2/access.log&amp;amp;cmd=whoami时，尝试通过URL参数来注入命令，但是由于Apache服务器的安全限制，它会防止你执行任何危险的命令。因此，你需要使用curl -s命令中的-s选项来使请求变得“安静”或“静默”，以便绕过Apache服务器的安全限制，从而成功执行whoami命令。请注意，这种做法是不安全的，因为它可以导致潜在的安全漏洞和攻击。 Q2：这种安全限制具体指什么？ A2： 这种安全限制指的是 Apache 服务器的安全机制，它会防止用户通过 URL 参数来注入危险的命令或脚本，从而保护服务器免受潜在的攻击和漏洞。这种安全机制可以通过配置 Apache 服务器的安全策略来实现，例如使用 mod_security 模块或其他类似的安全插件。这些安全插件可以检测和拦截恶意请求，从而保护服务器的安全性。 Q3：为什么curl -s的静默模式可以绕过这种安全机制 curl -s 命令的静默模式并不能直接绕过 Apache 服务器的安全机制，但是它可以在一定程度上隐藏请求的细节，从而使请求更加难以被服务器检测到。在这种情况下，curl -s 命令发送的请求中，URL 参数中的 file 参数被用于读取 Apache 服务器的访问日志文件，而 cmd 参数则被用于执行 whoami 命令。由于这些操作可能被认为是恶意行为，因此 Apache 服务器会尝试阻止它们的执行。然而，由于 curl -s 命令在请求过程中不会显示任何进度或错误消息，因此它可以在一定程度上隐藏请求的细节，使得服务器更难以检测到恶意行为。但是需要注意的是，这种做法仍然存在潜在的安全风险，因为攻击者可以使用其他更加隐蔽和复杂的技术来绕过服务器的安全机制。'><title>Q&amp;A curl 的静默模式</title>
+
+<link rel='canonical' href='https://slientlamb.github.io/p/qa-curl-%E7%9A%84%E9%9D%99%E9%BB%98%E6%A8%A1%E5%BC%8F/'>
+
+<link rel="stylesheet" href="/scss/style.min.5a8e892f6fa14515e9065eee1f5d2e05302606ec7f11750b2fb95198f9cdcbfd.css"><meta property='og:title' content='Q&amp;A curl 的静默模式'>
+<meta property='og:description' content='问题概述：在Apache的日志中毒攻击中，使用curl访问附带payload的url不会被执行，但是使用-s参数会被执行，查看帮助文档只能发现是静默模式，没有更多解释。
+curl -s -s 选项代表“静默”或“安静”模式，这意味着在请求期间该命令不会显示任何进度或错误消息。这对于编写脚本或自动化任务很有用，因为不会产生杂乱的输出干扰结果。
+Q1： 为什么使用curl访问http://192.168.1.1:1/index.php?file=../../../../../var/log/apache2/access.log&amp;amp;cmd=whoami不成功，但是加上-s能成功执行whoami A1： 这是因为在访问http://192.168.1.1:1/index.php?file=../../../../../var/log/apache2/access.log&amp;amp;cmd=whoami时，尝试通过URL参数来注入命令，但是由于Apache服务器的安全限制，它会防止你执行任何危险的命令。因此，你需要使用curl -s命令中的-s选项来使请求变得“安静”或“静默”，以便绕过Apache服务器的安全限制，从而成功执行whoami命令。请注意，这种做法是不安全的，因为它可以导致潜在的安全漏洞和攻击。 Q2：这种安全限制具体指什么？ A2： 这种安全限制指的是 Apache 服务器的安全机制，它会防止用户通过 URL 参数来注入危险的命令或脚本，从而保护服务器免受潜在的攻击和漏洞。这种安全机制可以通过配置 Apache 服务器的安全策略来实现，例如使用 mod_security 模块或其他类似的安全插件。这些安全插件可以检测和拦截恶意请求，从而保护服务器的安全性。 Q3：为什么curl -s的静默模式可以绕过这种安全机制 curl -s 命令的静默模式并不能直接绕过 Apache 服务器的安全机制，但是它可以在一定程度上隐藏请求的细节，从而使请求更加难以被服务器检测到。在这种情况下，curl -s 命令发送的请求中，URL 参数中的 file 参数被用于读取 Apache 服务器的访问日志文件，而 cmd 参数则被用于执行 whoami 命令。由于这些操作可能被认为是恶意行为，因此 Apache 服务器会尝试阻止它们的执行。然而，由于 curl -s 命令在请求过程中不会显示任何进度或错误消息，因此它可以在一定程度上隐藏请求的细节，使得服务器更难以检测到恶意行为。但是需要注意的是，这种做法仍然存在潜在的安全风险，因为攻击者可以使用其他更加隐蔽和复杂的技术来绕过服务器的安全机制。'>
+<meta property='og:url' content='https://slientlamb.github.io/p/qa-curl-%E7%9A%84%E9%9D%99%E9%BB%98%E6%A8%A1%E5%BC%8F/'>
+<meta property='og:site_name' content='LAKE'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-09-14T08:55:21&#43;00:00'/><meta property='article:modified_time' content='2023-09-14T08:55:21&#43;00:00'/>
+<meta name="twitter:title" content="Q&amp;A curl 的静默模式">
+<meta name="twitter:description" content="问题概述：在Apache的日志中毒攻击中，使用curl访问附带payload的url不会被执行，但是使用-s参数会被执行，查看帮助文档只能发现是静默模式，没有更多解释。
+curl -s -s 选项代表“静默”或“安静”模式，这意味着在请求期间该命令不会显示任何进度或错误消息。这对于编写脚本或自动化任务很有用，因为不会产生杂乱的输出干扰结果。
+Q1： 为什么使用curl访问http://192.168.1.1:1/index.php?file=../../../../../var/log/apache2/access.log&amp;amp;cmd=whoami不成功，但是加上-s能成功执行whoami A1： 这是因为在访问http://192.168.1.1:1/index.php?file=../../../../../var/log/apache2/access.log&amp;amp;cmd=whoami时，尝试通过URL参数来注入命令，但是由于Apache服务器的安全限制，它会防止你执行任何危险的命令。因此，你需要使用curl -s命令中的-s选项来使请求变得“安静”或“静默”，以便绕过Apache服务器的安全限制，从而成功执行whoami命令。请注意，这种做法是不安全的，因为它可以导致潜在的安全漏洞和攻击。 Q2：这种安全限制具体指什么？ A2： 这种安全限制指的是 Apache 服务器的安全机制，它会防止用户通过 URL 参数来注入危险的命令或脚本，从而保护服务器免受潜在的攻击和漏洞。这种安全机制可以通过配置 Apache 服务器的安全策略来实现，例如使用 mod_security 模块或其他类似的安全插件。这些安全插件可以检测和拦截恶意请求，从而保护服务器的安全性。 Q3：为什么curl -s的静默模式可以绕过这种安全机制 curl -s 命令的静默模式并不能直接绕过 Apache 服务器的安全机制，但是它可以在一定程度上隐藏请求的细节，从而使请求更加难以被服务器检测到。在这种情况下，curl -s 命令发送的请求中，URL 参数中的 file 参数被用于读取 Apache 服务器的访问日志文件，而 cmd 参数则被用于执行 whoami 命令。由于这些操作可能被认为是恶意行为，因此 Apache 服务器会尝试阻止它们的执行。然而，由于 curl -s 命令在请求过程中不会显示任何进度或错误消息，因此它可以在一定程度上隐藏请求的细节，使得服务器更难以检测到恶意行为。但是需要注意的是，这种做法仍然存在潜在的安全风险，因为攻击者可以使用其他更加隐蔽和复杂的技术来绕过服务器的安全机制。"><style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script>
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap";
+		
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/%E5%B0%8F%E9%BB%91_hu74eb6b2e5bf880ccdef5d0e23d762526_8972_300x0_resize_q75_box.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🐶</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">LAKE</a></h1>
+            <h2 class="site-description">Let&#39;s try to enjoy.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/SlientLamb'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.yuque.com/lake'
+                        target="_blank"
+                        title="yuque"
+                    >
+                        
+                        
+                            <?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="172px" viewBox="0 0 176 172" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 2备份 2</title>
+    <defs>
+        <radialGradient cx="38.1747213%" cy="86.0776601%" fx="38.1747213%" fy="86.0776601%" r="97.067379%" gradientTransform="translate(0.381747,0.860777),scale(0.855365,1.000000),rotate(-46.300512),translate(-0.381747,-0.860777)" id="radialGradient-1">
+            <stop stop-color="#178F67" offset="0%"></stop>
+            <stop stop-color="#31CC79" stop-opacity="0.55" offset="54.6847684%"></stop>
+            <stop stop-color="#53E68D" stop-opacity="0.8" offset="100%"></stop>
+        </radialGradient>
+        <path d="M76.5669734,7.10542736e-15 L77.1322485,7.10542736e-15 L77.6317133,7.10542736e-15 L77.6317133,7.10542736e-15 L78.1408771,0.00258488427 L78.1408771,0.00258488427 L78.6596574,0.00531653925 L78.6596574,0.00531653925 L79.1879717,0.00906258891 L79.1879717,0.00906258891 L79.7257374,0.0138642228 L79.7257374,0.0138642228 L80.2728723,0.0197626306 L80.2728723,0.0197626306 L80.8292937,0.0267990018 L80.8292937,0.0267990018 L81.2053598,0.0321424584 L81.2053598,0.0321424584 L81.5854921,0.0380221872 L81.5854921,0.0380221872 L82.1632615,0.0478739881 L82.1632615,0.0478739881 L82.7500426,0.0590010511 L82.7500426,0.0590010511 L83.3457529,0.0714445656 L83.3457529,0.0714445656 L83.7478131,0.0804919445 L83.7478131,0.0804919445 L84.3582221,0.0952210775 L84.3582221,0.0952210775 L84.9773405,0.111376501 L84.9773405,0.111376501 L85.6050857,0.128999405 L85.6050857,0.128999405 L86.0283344,0.141583614 L86.0283344,0.141583614 L86.6702744,0.16174385 L86.6702744,0.16174385 L87.3206213,0.183481406 L87.3206213,0.183481406 L87.7588157,0.198869738 L87.7588157,0.198869738 L88.2006854,0.214989611 L88.2006854,0.214989611 L88.646206,0.231853231 L88.646206,0.231853231 L89.095353,0.249472801 L89.095353,0.249472801 L89.5481021,0.267860525 L89.5481021,0.267860525 L90.0044287,0.287028607 L90.0044287,0.287028607 L90.6955731,0.317270601 L90.6955731,0.317270601 L91.1607368,0.338442975 L91.1607368,0.338442975 L91.8650223,0.371748612 L91.8650223,0.371748612 L92.3388702,0.395001554 L92.3388702,0.395001554 L92.8161492,0.419108079 L92.8161492,0.419108079 L93.5384472,0.456895037 L93.5384472,0.456895037 L94.0241967,0.483188918 L94.0241967,0.483188918 L94.5132916,0.510379099 L94.5132916,0.510379099 L95.0057075,0.538477785 L95.0057075,0.538477785 L95.50142,0.567497179 L95.50142,0.567497179 L96.0004046,0.597449485 L96.0004046,0.597449485 L96.5026369,0.628346909 L96.5026369,0.628346909 L97.0080925,0.660201654 L97.0080925,0.660201654 L97.5167469,0.693025925 L97.5167469,0.693025925 L98.0285757,0.726831926 L98.0285757,0.726831926 L98.5435545,0.761631861 L98.5435545,0.761631861 C117.034398,2.0253048 121.931513,15.3414752 122.4526,16.9348664 L122.480007,17.0204228 L122.480007,17.0204228 L122.501293,17.0905166 L122.501293,17.0905166 L130.528463,17.527597 L130.528463,17.527597 C130.956829,17.527597 131.304088,17.8748563 131.304088,18.3032223 C131.304088,18.6102515 131.125693,18.8756143 130.866902,19.001311 C122.627285,23.459864 120.110054,32.5194451 121.589956,38.4207668 C122.066913,40.3227016 122.807951,41.9576385 123.632928,43.6857144 L124.154166,44.7734635 C126.06382,48.7676736 128.207925,53.6041208 128.558054,63.3380184 C129.341811,85.1272154 110.188775,104.710669 87.5256709,104.710669 L87.2776773,104.710768 L87.2776773,104.710768 L86.7483602,104.711559 L86.7483602,104.711559 L85.8710598,104.714228 L85.8710598,104.714228 L85.2306429,104.716996 L85.2306429,104.716996 L84.1866928,104.722631 L84.1866928,104.722631 L83.4351761,104.727377 L83.4351761,104.727377 L82.6392196,104.732913 L82.6392196,104.732913 L81.3619599,104.742701 L81.3619599,104.742701 L79.9847105,104.754268 L79.9847105,104.754268 L78.5074713,104.767614 L78.5074713,104.767614 L76.3822793,104.788178 L76.3822793,104.788178 L74.6717306,104.805677 L74.6717306,104.805677 L71.5986165,104.838796 L71.5986165,104.838796 L68.247753,104.876858 L68.247753,104.876858 L64.6191401,104.919864 L64.6191401,104.919864 L62.3086527,104.94804 L62.3086527,104.94804 L59.072463,104.988376 L59.072463,104.988376 L54.7772515,105.043245 L54.7772515,105.043245 L50.2042906,105.103058 L50.2042906,105.103058 L46.3459423,105.154467 L46.3459423,105.154467 L40.2251205,105.237512 L40.2251205,105.237512 L35.9223732,105.29683 L35.9223732,105.29683 L27.9648312,105.408249 L27.9648312,105.408249 L19.4629003,105.529357 L19.4629003,105.529357 L11.7422419,105.640875 L11.7422419,105.640875 L7.73192805,105.699303 L56.1964377,50.5871031 L56.635628,50.0864867 L56.635628,50.0864867 L57.0736267,49.5883461 L57.0736267,49.5883461 L57.5103344,49.0925508 L57.5103344,49.0925508 L59.6710229,46.644195 L59.6710229,46.644195 L60.0978937,46.1597356 L60.0978937,46.1597356 L60.5227766,45.6767094 L60.5227766,45.6767094 L60.9455719,45.1949862 C61.0158583,45.1148003 61.0860536,45.0346632 61.1561557,44.9545724 L61.5756332,44.474559 C61.6453542,44.3946418 61.7149778,44.3147654 61.784502,44.2349269 L62.2004376,43.7563303 L62.2004376,43.7563303 L62.6138875,43.2785153 C67.4225824,37.7080595 71.7034531,32.2705719 74.7450927,26.0348089 C78.1214028,16.4988117 74.6843141,9.38305492 71.1757692,5.07151589 C70.9048753,4.73862305 70.6335555,4.42244713 70.3649128,4.12316484 C69.1688678,2.59214492 69.9832221,0.0413893594 72.2608727,0.0413893594 C72.4464618,0.0413893594 72.6358217,0.0385210247 72.8289348,0.0348208586 L73.2697649,0.0259509195 C73.3691312,0.0240497295 73.4694324,0.0223224261 73.5706664,0.0210235721 L73.9912023,0.0159855363 L73.9912023,0.0159855363 L74.4220699,0.0115567163 L74.4220699,0.0115567163 L74.715014,0.00896292759 L74.715014,0.00896292759 L75.4671436,0.00382294169 L75.4671436,0.00382294169 L76.08898,0.00119436085 L76.08898,0.00119436085 L76.5669734,7.10542736e-15 L76.5669734,7.10542736e-15 Z" id="path-2"></path>
+        <linearGradient x1="81.4682253%" y1="57.1884468%" x2="-8.23595123%" y2="79.1237607%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#D6F056" offset="100%"></stop>
+        </linearGradient>
+        <path d="M56.1964377,50.5871031 C35.2204038,74.1922716 10.2554857,102.912753 0.779178886,113.701435 C-1.0463188,115.779747 0.723009731,117.742294 2.13706727,117.985398 C72.8364108,130.140028 95.2838946,96.8230809 100.284077,81.5928901 C107.125296,60.7550365 97.4590008,50.5871031 91.9885566,47.2713133 C73.4385958,36.0276614 59.6753666,46.6721256 56.1964377,50.5871031 Z" id="path-4"></path>
+    </defs>
+    <g id="控件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo" transform="translate(17.933154, 30.135279)">
+            <g id="路径">
+                <use fill="#31CC79" xlink:href="#path-2"></use>
+                <use fill-opacity="0.600000024" fill="url(#radialGradient-1)" xlink:href="#path-2"></use>
+            </g>
+            <g id="Fill-12-Copy">
+                <use fill="#93E65C" xlink:href="#path-4"></use>
+                <use fill-opacity="0.75" fill="url(#linearGradient-3)" style="mix-blend-mode: overlay;" xlink:href="#path-4"></use>
+            </g>
+        </g>
+    </g>
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://slientlamb.github.io/en/" >English</option>
+                        
+                            <option value="https://slientlamb.github.io/" selected>中文</option>
+                        
+                            <option value="https://slientlamb.github.io/ar/" >عربي</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/qa-curl-%E7%9A%84%E9%9D%99%E9%BB%98%E6%A8%A1%E5%BC%8F/">Q&amp;A curl 的静默模式</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 14, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>问题概述：<!-- raw HTML omitted -->在Apache的日志中毒攻击中，使用curl访问附带payload的url不会被执行，但是使用<code>-s</code>参数会被执行，查看帮助文档只能发现是静默模式，没有更多解释。</p>
+<blockquote>
+<p><code>curl -s </code> -s 选项代表“静默”或“安静”模式，这意味着在请求期间该命令不会显示任何进度或错误消息。这对于编写脚本或自动化任务很有用，因为不会产生杂乱的输出干扰结果。</p>
+</blockquote>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="q1">Q1：</h1>
+<p>为什么使用curl访问<code>http://192.168.1.1:1/index.php?file=../../../../../var/log/apache2/access.log&amp;cmd=whoami</code>不成功，但是加上-s能成功执行whoami
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="a1">A1：</h1>
+<p>这是因为在访问<code>http://192.168.1.1:1/index.php?file=../../../../../var/log/apache2/access.log&amp;cmd=whoami</code>时，尝试通过URL参数来注入命令，但是由于Apache服务器的安全限制，它会防止你执行任何危险的命令。因此，你需要使用curl -s命令中的-s选项来使请求变得“安静”或“静默”，以便绕过Apache服务器的安全限制，从而成功执行whoami命令。请注意，这种做法是不安全的，因为它可以导致潜在的安全漏洞和攻击。
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="q2这种安全限制具体指什么">Q2：这种安全限制具体指什么？</h1>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="a2">A2：</h1>
+<p>这种安全限制指的是 Apache 服务器的安全机制，它会防止用户通过 URL 参数来注入危险的命令或脚本，从而保护服务器免受潜在的攻击和漏洞。这种安全机制可以通过配置 Apache 服务器的安全策略来实现，例如使用 mod_security 模块或其他类似的安全插件。这些安全插件可以检测和拦截恶意请求，从而保护服务器的安全性。
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="q3为什么curl--s的静默模式可以绕过这种安全机制">Q3：为什么curl -s的静默模式可以绕过这种安全机制</h1>
+<p><code>curl -s </code>命令的静默模式并不能直接绕过 Apache 服务器的安全机制，但是它可以在一定程度上隐藏请求的细节，从而使请求更加难以被服务器检测到。在这种情况下，<code>curl -s </code>命令发送的请求中，URL 参数中的 file 参数被用于读取 Apache 服务器的访问日志文件，而 cmd 参数则被用于执行 whoami 命令。由于这些操作可能被认为是恶意行为，因此 Apache 服务器会尝试阻止它们的执行。然而，由于 curl -s 命令在请求过程中不会显示任何进度或错误消息，因此它可以在一定程度上隐藏请求的细节，使得服务器更难以检测到恶意行为。但是需要注意的是，这种做法仍然存在潜在的安全风险，因为攻击者可以使用其他更加隐蔽和复杂的技术来绕过服务器的安全机制。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 LAKE
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.12.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
