@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Q&amp;A JNI Error - </title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Q&amp;A JNI Error" />
+<meta property="og:description" content="Error:A JNI error has occurred,please check your installation and try again 启动Burpsuite时，提示以上错误
+JNI：
+JNI是Java Native Interface的缩写，通过使用 Java本地接口书写程序，可以确保代码在不同的平台上方便移植。
+搜索后发现原因是java -verion 和 javac -version 版本不一致所以cmd打开
+C:\Users\lak&gt;java -version java version &#34;1.8.0_311&#34; Java(TM) SE Runtime Environment (build 1.8.0_311-b11) Java HotSpot(TM) 64-Bit Server VM (build 25.311-b11, mixed mode) C:\Users\lak&gt;javac -version &#39;javac&#39; 不是内部或外部命令，也不是可运行的程序 或批处理文件。 问题出在没有javac
+搜索javac后得到解答：
+命令行里运行的java.exe来自Public JRE，具体来说在C:\Windows\System32\java.exe。它会找到您系统上现在装着的那个Public JRE的具体路径去运行Java程序。 而javac.exe不是JRE的一部分，而是JDK的。JDK的安装程序不会自动将自己的bin目录配置到PATH环境变量上，所以在命令行里也看不到它。 要解决这个问题要么自己手动把JDK安装目录的bin目录配置到PATH环境变量里，要么在命令行用JDK的全路径去访问javac.exe。
+作者：RednaxelaFX链接：https://www.zhihu.com/question/28428426/answer/40774504来源：知乎著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+问题解决。
+遇到新问题 打开Burp提示如下错误：--add-opens=java.desktop/javax.swing=ALL-UNNAMED--add-opens=java.baseljava.lang=ALL-UNNAMED
+网上找到的方法：未解决
+转变思路，在启动脚本里加上这些参数编辑start.bat文件
+start &#34;burpsuite&#34; /B &#34;javaw.exe&#34; -Xmx8G -XX:-UseParallelGC --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -noverify -javaagent:BurpSuiteLoader_v2021." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://slientlamb.github.io/post/63251819/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-02-16T06:38:19+00:00" />
+<meta property="article:modified_time" content="2024-02-16T06:38:19+00:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Q&amp;A JNI Error"/>
+<meta name="twitter:description" content="Error:A JNI error has occurred,please check your installation and try again 启动Burpsuite时，提示以上错误
+JNI：
+JNI是Java Native Interface的缩写，通过使用 Java本地接口书写程序，可以确保代码在不同的平台上方便移植。
+搜索后发现原因是java -verion 和 javac -version 版本不一致所以cmd打开
+C:\Users\lak&gt;java -version java version &#34;1.8.0_311&#34; Java(TM) SE Runtime Environment (build 1.8.0_311-b11) Java HotSpot(TM) 64-Bit Server VM (build 25.311-b11, mixed mode) C:\Users\lak&gt;javac -version &#39;javac&#39; 不是内部或外部命令，也不是可运行的程序 或批处理文件。 问题出在没有javac
+搜索javac后得到解答：
+命令行里运行的java.exe来自Public JRE，具体来说在C:\Windows\System32\java.exe。它会找到您系统上现在装着的那个Public JRE的具体路径去运行Java程序。 而javac.exe不是JRE的一部分，而是JDK的。JDK的安装程序不会自动将自己的bin目录配置到PATH环境变量上，所以在命令行里也看不到它。 要解决这个问题要么自己手动把JDK安装目录的bin目录配置到PATH环境变量里，要么在命令行用JDK的全路径去访问javac.exe。
+作者：RednaxelaFX链接：https://www.zhihu.com/question/28428426/answer/40774504来源：知乎著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+问题解决。
+遇到新问题 打开Burp提示如下错误：--add-opens=java.desktop/javax.swing=ALL-UNNAMED--add-opens=java.baseljava.lang=ALL-UNNAMED
+网上找到的方法：未解决
+转变思路，在启动脚本里加上这些参数编辑start.bat文件
+start &#34;burpsuite&#34; /B &#34;javaw.exe&#34; -Xmx8G -XX:-UseParallelGC --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -noverify -javaagent:BurpSuiteLoader_v2021."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://slientlamb.github.io/post/63251819/" /><link rel="prev" href="https://slientlamb.github.io/post/83109254/" /><link rel="next" href="https://slientlamb.github.io/post/158623701/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Q\u0026A JNI Error",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/slientlamb.github.io\/post\/63251819\/"
+        },"genre": "post","wordcount":  81 ,
+        "url": "https:\/\/slientlamb.github.io\/post\/63251819\/","datePublished": "2024-02-16T06:38:19+00:00","dateModified": "2024-02-16T06:38:19+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">rxgltc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">rxgltc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">Q&amp;A JNI Error</h1><div class="content" id="content"><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="errora-jni-error-has-occurredplease-check-your-installation-and-try-again">Error:A JNI error has occurred,please check your installation and try again</h2>
+<p>启动Burpsuite时，提示以上错误</p>
+<p>JNI：</p>
+<blockquote>
+<p>JNI是Java Native Interface的缩写，通过使用 Java本地接口书写程序，可以确保代码在不同的平台上方便移植。</p>
+</blockquote>
+<hr>
+<p>搜索后发现原因是java -verion 和 javac -version 版本不一致<!-- raw HTML omitted -->所以cmd打开</p>
+<pre tabindex="0"><code>C:\Users\lak&gt;java -version
+java version &#34;1.8.0_311&#34;
+Java(TM) SE Runtime Environment (build 1.8.0_311-b11)
+Java HotSpot(TM) 64-Bit Server VM (build 25.311-b11, mixed mode)
+
+C:\Users\lak&gt;javac -version
+&#39;javac&#39; 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+</code></pre><p>问题出在没有javac</p>
+<hr>
+<p>搜索javac后得到解答：</p>
+<blockquote>
+<p>命令行里运行的java.exe来自Public JRE，具体来说在C:\Windows\System32\java.exe。它会找到您系统上现在装着的那个Public JRE的具体路径去运行Java程序。
+而javac.exe不是JRE的一部分，而是JDK的。JDK的安装程序不会自动将自己的bin目录配置到PATH环境变量上，所以在命令行里也看不到它。
+要解决这个问题要么自己手动把JDK安装目录的bin目录配置到PATH环境变量里，要么在命令行用JDK的全路径去访问javac.exe。</p>
+</blockquote>
+<p>作者：RednaxelaFX<!-- raw HTML omitted -->链接：https://www.zhihu.com/question/28428426/answer/40774504<!-- raw HTML omitted -->来源：知乎<!-- raw HTML omitted -->著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>问题解决。</p>
+<hr>
+<p>遇到新问题 打开Burp提示如下错误：<!-- raw HTML omitted --><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/63251819_1.png"
+        data-srcset="/images/63251819_1.png, /images/63251819_1.png 1.5x, /images/63251819_1.png 2x"
+        data-sizes="auto"
+        alt="/images/63251819_1.png"
+        title="image.png" /><!-- raw HTML omitted --><code>--add-opens=java.desktop/javax.swing=ALL-UNNAMED</code><!-- raw HTML omitted --><code>--add-opens=java.baseljava.lang=ALL-UNNAMED</code></p>
+<p>网上找到的方法：<!-- raw HTML omitted --><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/63251819_2.png"
+        data-srcset="/images/63251819_2.png, /images/63251819_2.png 1.5x, /images/63251819_2.png 2x"
+        data-sizes="auto"
+        alt="/images/63251819_2.png"
+        title="image.png" /><!-- raw HTML omitted -->未解决</p>
+<hr>
+<p>转变思路，在启动脚本里加上这些参数<!-- raw HTML omitted -->编辑start.bat文件</p>
+<pre tabindex="0"><code>start &#34;burpsuite&#34; /B &#34;javaw.exe&#34; -Xmx8G -XX:-UseParallelGC --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -noverify -javaagent:BurpSuiteLoader_v2021.12.jar -Dfile.encoding=utf-8 -jar &#34;%~dp0burpsuite_pro_v2021.12.jar&#34; %*
+pause
+</code></pre><p>能正常开启Burp ，但是需要license文件</p>
+<hr>
+<p>很久之前用过的破解版Burp里有KeyGen工具，下载下来后，根据网上教程</p>
+<blockquote>
+<p>将激活请求复制到注册机，然后再将激活响应复制到软件内，即可完成激活；
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/63251819_3.png"
+        data-srcset="/images/63251819_3.png, /images/63251819_3.png 1.5x, /images/63251819_3.png 2x"
+        data-sizes="auto"
+        alt="/images/63251819_3.png"
+        title="image.png" /></p>
+</blockquote>
+<p>怀疑是类似“挑战——响应”机制激活。</p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

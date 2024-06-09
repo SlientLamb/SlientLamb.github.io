@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Q&amp;A  pip安装时遇到的问题     W13scan 安装 - </title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Q&amp;A  pip安装时遇到的问题     W13scan 安装" />
+<meta property="og:description" content="Q:W13scan安装需要的依赖包 W13scan是基于python的被动扫描器，主要是看中开源的属性，可以自己修改。先罗列下需要的依赖包
+ModuleNotFoundError: No module named &lsquo;OpenSSL&rsquo; ModuleNotFoundError: No module named &lsquo;cowpy&rsquo; ModuleNotFoundError: No module named &lsquo;colorama&rsquo; ModuleNotFoundError: No module named &lsquo;chardet&rsquo; ModuleNotFoundError: No module named &lsquo;OpenSSL&rsquo; ModuleNotFoundError: No module named &lsquo;socks&rsquo; ModuleNotFoundError: No module named &lsquo;cowpy&rsquo; ModuleNotFoundError: No module named &lsquo;pyjsparser&rsquo; ModuleNotFoundError: No module named &lsquo;six&rsquo; ModuleNotFoundError: No module named &rsquo;tld&#39; ModuleNotFoundError: No module named &rsquo;lxml&#39;
+以上是一些需要安装的依赖包，主要内容在于下面：遇到的一些问题
+pip search 的替代方案 pip_search pip search XXX 是常规的查找相关包的命令，但是现在使用会出现如下问题：原因是因为pip search相关的服务器被不明攻击，导致官方无限期关闭了这项功能。
+因此有了替代方案——pip_search包pip install pip_search使用方法：pip pip_search XXX" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://slientlamb.github.io/post/70748382/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-03-30T14:06:15+00:00" />
+<meta property="article:modified_time" content="2022-03-30T14:06:15+00:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Q&amp;A  pip安装时遇到的问题     W13scan 安装"/>
+<meta name="twitter:description" content="Q:W13scan安装需要的依赖包 W13scan是基于python的被动扫描器，主要是看中开源的属性，可以自己修改。先罗列下需要的依赖包
+ModuleNotFoundError: No module named &lsquo;OpenSSL&rsquo; ModuleNotFoundError: No module named &lsquo;cowpy&rsquo; ModuleNotFoundError: No module named &lsquo;colorama&rsquo; ModuleNotFoundError: No module named &lsquo;chardet&rsquo; ModuleNotFoundError: No module named &lsquo;OpenSSL&rsquo; ModuleNotFoundError: No module named &lsquo;socks&rsquo; ModuleNotFoundError: No module named &lsquo;cowpy&rsquo; ModuleNotFoundError: No module named &lsquo;pyjsparser&rsquo; ModuleNotFoundError: No module named &lsquo;six&rsquo; ModuleNotFoundError: No module named &rsquo;tld&#39; ModuleNotFoundError: No module named &rsquo;lxml&#39;
+以上是一些需要安装的依赖包，主要内容在于下面：遇到的一些问题
+pip search 的替代方案 pip_search pip search XXX 是常规的查找相关包的命令，但是现在使用会出现如下问题：原因是因为pip search相关的服务器被不明攻击，导致官方无限期关闭了这项功能。
+因此有了替代方案——pip_search包pip install pip_search使用方法：pip pip_search XXX"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://slientlamb.github.io/post/70748382/" /><link rel="prev" href="https://slientlamb.github.io/post/71062150/" /><link rel="next" href="https://slientlamb.github.io/post/73401803/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Q\u0026A  pip安装时遇到的问题     W13scan 安装",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/slientlamb.github.io\/post\/70748382\/"
+        },"genre": "post","wordcount":  198 ,
+        "url": "https:\/\/slientlamb.github.io\/post\/70748382\/","datePublished": "2022-03-30T14:06:15+00:00","dateModified": "2022-03-30T14:06:15+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">rxgltc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">rxgltc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">Q&amp;A  pip安装时遇到的问题     W13scan 安装</h1><div class="content" id="content"><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="qw13scan安装需要的依赖包">Q:W13scan安装需要的依赖包</h1>
+<p>W13scan是基于python的被动扫描器，主要是看中开源的属性，可以自己修改。<!-- raw HTML omitted -->先罗列下需要的依赖包</p>
+<blockquote>
+<p>ModuleNotFoundError: No module named &lsquo;OpenSSL&rsquo;
+ModuleNotFoundError: No module named &lsquo;cowpy&rsquo;
+ModuleNotFoundError: No module named &lsquo;colorama&rsquo;
+ModuleNotFoundError: No module named &lsquo;chardet&rsquo;
+ModuleNotFoundError: No module named &lsquo;OpenSSL&rsquo;
+ModuleNotFoundError: No module named &lsquo;socks&rsquo;
+ModuleNotFoundError: No module named &lsquo;cowpy&rsquo;
+ModuleNotFoundError: No module named &lsquo;pyjsparser&rsquo;
+ModuleNotFoundError: No module named &lsquo;six&rsquo;
+ModuleNotFoundError: No module named &rsquo;tld'
+ModuleNotFoundError: No module named &rsquo;lxml'</p>
+</blockquote>
+<p>以上是一些需要安装的依赖包，主要内容在于下面：遇到的一些问题</p>
+<hr>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="pip-search-的替代方案-pip_search">pip search 的替代方案 pip_search</h2>
+<p>pip search XXX 是常规的查找相关包的命令，但是现在使用会出现如下问题：<!-- raw HTML omitted --><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/70748382_1.png"
+        data-srcset="/images/70748382_1.png, /images/70748382_1.png 1.5x, /images/70748382_1.png 2x"
+        data-sizes="auto"
+        alt="/images/70748382_1.png"
+        title="image.png" /><!-- raw HTML omitted -->原因是因为pip search相关的服务器被不明攻击，导致官方无限期关闭了这项功能。</p>
+<p>因此有了替代方案——pip_search包<!-- raw HTML omitted --><code>pip install pip_search</code><!-- raw HTML omitted -->使用方法：<!-- raw HTML omitted --><code>pip pip_search XXX</code></p>
+<hr>
+<p>ModuleNotFoundError: No module named &lsquo;OpenSSL&rsquo;<!-- raw HTML omitted --><code>pip install pyOpenSSL</code><!-- raw HTML omitted --><a href="http://www.04007.cn/article/478.html" target="_blank" rel="noopener noreffer">http://www.04007.cn/article/478.html</a>
+</p>
+<hr>
+<p>ModuleNotFoundError: No module named &lsquo;cowpy&rsquo;<!-- raw HTML omitted --><code> pip install cowpy</code></p>
+<hr>
+<p>[ERROR] incompatible Python version detected (&lsquo;3.10.1&rsquo;). To successfully run sqlmap you&rsquo;ll have to use version &gt;= 3.6 (visit &lsquo;<a href="https://www.python.org/downloads/%27" target="_blank" rel="noopener noreffer">https://www.python.org/downloads/&rsquo;)</a>
+)<!-- raw HTML omitted -->安装了下python3.6<!-- raw HTML omitted --><code>C:\Python36\python.exe .\w13scan.py -u [http://testphp.vulnweb.com/AJAX/#](http://testphp.vulnweb.com/AJAX/#)</code></p>
+<hr>
+<p>ModuleNotFoundError: No module named &lsquo;requests&rsquo;<!-- raw HTML omitted --><code> pip install requests</code></p>
+<p>安装之后，还是不行，显示没有requests</p>
+<hr>
+<p>考虑是不同版本python的问题，开始找windows上有多个版本的Python，怎么安装包到指定的Python版本</p>
+<blockquote>
+<p>举例：假如我这里有两个版本的，Python3.5,和Python3.6</p>
+<p>当我用pip install xxx时，可能系统默认安装到3.5里面，但是我想要安装到3.6里面怎么办</p>
+<p>打开终端；转到安装3.6的目录下的scripts，下面有一个pip.exe</p>
+<p>在scripts目录下输入pip install xxx,就能安装到3.6里面了
+————————————————
+版权声明：本文为CSDN博主「向前看sf→→→」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：<a href="https://blog.csdn.net/swiftshunfeng/article/details/102974370" target="_blank" rel="noopener noreffer">https://blog.csdn.net/swiftshunfeng/article/details/102974370</a>
+</p>
+</blockquote>
+<hr>
+<p>ModuleNotFoundError: No module named &lsquo;colorama&rsquo;<!-- raw HTML omitted -->ModuleNotFoundError: No module named &lsquo;chardet&rsquo;<!-- raw HTML omitted -->ModuleNotFoundError: No module named &lsquo;OpenSSL&rsquo;<!-- raw HTML omitted -->ModuleNotFoundError: No module named &lsquo;socks&rsquo;<!-- raw HTML omitted -->ModuleNotFoundError: No module named &lsquo;cowpy&rsquo;<!-- raw HTML omitted -->ModuleNotFoundError: No module named &lsquo;pyjsparser&rsquo;<!-- raw HTML omitted -->six<!-- raw HTML omitted -->tld<!-- raw HTML omitted -->lxml</p>
+<p>This package requires Rust &gt;=1.41.0.<!-- raw HTML omitted -->安装rust</p>
+<p>SSLError<!-- raw HTML omitted -->pip install Pyinstaller -i <a href="http://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="noopener noreffer">http://mirrors.aliyun.com/pypi/simple/</a>
+ &ndash;trusted-host mirrors.aliyun.com<!-- raw HTML omitted -->ok</p>
+<p>socks</p>
+<blockquote>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</blockquote>
+<h4 id="在python环境中已经安装了socks但是运行代码还是报错no-module-named-socks">在python环境中已经安装了socks，但是运行代码还是报错：No module named ‘socks’</h4>
+<blockquote>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</blockquote>
+<h4 id="解决方法使用前先更新requestshttpssocsdnnetsosearchqrequestsspm1001210130017020版本为支持socks的版本">解决方法：使用前先更新<a href="https://so.csdn.net/so/search?q=requests&amp;spm=1001.2101.3001.7020" target="_blank" rel="noopener noreffer">requests</a>
+版本为支持socks的版本。</h4>
+<blockquote>
+<p><code>pip install -U requests[socks]</code></p>
+</blockquote>
+<p><code>./pip.exe install -U requests[socks] -i [http://mirrors.aliyun.com/pypi/simple/](http://mirrors.aliyun.com/pypi/simple/) --trusted-host mirrors.aliyun.com</code></p>
+<hr>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="w13scan-使用">W13SCAN 使用</h1>
+<p><code>PS F:\W13scan\w13scan\W13SCAN&gt; C:\Python36\python.exe .\w13scan.py  -s 127.0.0.1:7778 --html</code></p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

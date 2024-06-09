@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Q&amp;A windows下使用wget等linux命令 &amp;&amp; godzilla目录设置白名单 - </title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Q&amp;A windows下使用wget等linux命令 &amp;&amp; godzilla目录设置白名单" />
+<meta property="og:description" content="Q1:godzilla用浏览器下载会报毒然后删除，就想着用wget命令行下载 环境：shell：powershell
+A1:安装GNUWIN32 https://sourceforge.net/projects/gnuwin32/files/ 有以下命令：
+Name Modified Downloads / Week sed 2010-12-28 2,136 m4 2010-05-26 319 dehtml 2010-02-11 0 libpng 2009-06-04 319 file 2009-05-07 289 bison 2009-05-04 847 indent 2009-02-15 162 grep 2009-02-13 921 tree 2009-02-09 334 fatattr 2009-02-01 105 ed 2009-02-01 170 mktemp 2009-01-11 114 groff 2009-01-10 216 wget 2008-12-31 4,036 tre 2008-12-20 214 hello 2008-12-10 149 glpk 2008-12-04 200 openssl 2008-12-04 978 dmidecode 2008-12-03 143 grap 2008-10-28 96 autoconf 2008-10-16 152 texinfo 2008-10-02 194 units 2008-09-28 122 util-linux 2008-09-28 277 cygutils 2008-09-26 179 troff 2008-09-23 85 which 2008-08-10 84 sunrpc 2008-08-09 86 rpl 2008-07-19 89 zip 2008-07-13 840 libarchive 2008-06-27 200 crafty 2008-06-13 100 x86info 2008-06-13 95 t1utils 2008-03-24 106 bzip2 2008-03-20 500 freetype 2008-03-14 308 a2ps 2008-03-14 197 libtool 2008-02-10 150 gawk 2008-02-10 571 nawk 2008-02-09 76 gsar 2008-02-04 73 minised 2008-01-05 75 readline 2008-01-02 143 regex 2007-11-03 320 gzip 2007-10-15 609 diction 2007-09-13 107 gengetopt 2007-07-07 129 patch 2007-05-15 810 libpaper 2007-05-09 159 barcode 2007-05-09 212 pcre 2007-04-03 220 libungif 2007-03-01 209 giflib 2007-02-21 232 regex-Spencer 2006-12-19 3 make 2006-11-25 6,923 gsl 2006-07-11 211 tiff 2006-03-30 311 fax2png 2006-03-29 161 cpio 2006-03-09 154 id-utils 2006-03-09 157 gri 2006-01-29 92 libiconv 2006-01-29 528 edll-bfd 2006-01-08 94 edll 2006-01-08 87 less 2006-01-03 124 src-highlite 2005-11-19 56 rx 2005-11-19 84 psutils 2005-11-19 82 piechart 2005-11-19 80 pbmadd 2005-11-19 55 mawk 2005-11-19 58 libart_lgpl 2005-11-19 88 lha 2005-11-19 99 jpeg2ps 2005-11-19 75 doschk 2005-11-19 73 compface 2005-11-19 116 chsuf 2005-11-19 76 awka 2005-11-19 110 asciichart 2005-11-19 110 arj 2005-11-19 83 filetype 2005-09-10 99 jwhois 2005-09-09 124 zimg 2005-08-26 152 gd 2005-08-26 148 libopennet 2005-08-20 126 libconfig 2005-08-20 183 t1lib 2005-08-13 141 pdflib-lite 2005-08-13 137 hodie 2005-07-31 97 cpuid 2005-07-31 108 zlib 2005-07-25 662 jpeg 2005-05-15 295 hp2xx 2005-05-14 211 netpbm 2005-05-12 262 libintl 2005-05-07 361 gettext 2005-05-07 284 help2man 2005-04-24 100 cproto 2005-04-24 103 coreutils 2005-04-21 2,375 findutils 2005-04-18 167 arc 2005-04-11 77 re2c 2005-03-15 80 nenscript 2005-03-13 74 pdcurses 2005-03-13 112 calc 2005-03-12 154 bc 2005-03-11 144 unrar 2005-02-20 156 xpm 2005-02-14 172 xpm2wico 2005-02-14 108 unzip 2005-02-14 375 unrtf 2005-02-12 105 sgrep 2005-01-31 106 libwmf 2005-01-18 205 psmark 2005-01-17 112 automake 2004-12-19 134 gdbm 2004-12-18 183 iristools 2004-11-28 245 gcal 2004-11-28 160 wv 2004-11-21 210 gperf 2004-11-14 356 miscfiles 2004-10-24 48 jbigkit 2004-06-11 153 diffutils 2004-05-24 941 plotutils 2004-04-16 168 libxmi 2004-04-16 127 flex 2004-04-11 541 deroff 2004-03-24 151 fdlibm 2004-03-24 135 ntfsprogs 2004-03-15 208 attr 2004-03-15 192 mscompress 2004-03-14 109 sharutils 2004-03-12 150 pngutils 2004-01-26 144 libgw32c 2004-01-10 207 ttf2pt1 2004-01-02 196 urt 2003-12-27 177 btyacc 2003-10-30 86 chess 2003-10-25 91 polyglotman (rman) 2003-10-18 85 xpdf 2003-10-14 88 byacc 2003-10-04 95 popt 2003-10-04 174 tar 2003-10-03 394 libutf8 2003-09-27 151 enscript 2003-07-19 105 palm pilot 2003-03-30 231 hextools 2003-03-04 122 hex2bin 2003-03-04 140 bmp2png 2002-07-07 57 imgtops2 2002-07-05 223 libxml 2002-06-23 340 crypt 2002-04-30 331 termcap 2002-03-16 329 glibc-doc 2002-02-02 1 gcc-doc 2002-01-27 112 libxslt 2001-12-23 339 cppi 2001-12-08 112 scribe2latex 2001-08-08 233 bm2font 2001-05-23 243 dvidjk 2001-04-10 235 Q2：godzilla被chrome、Microsoft Defender删除 A2 chrome设置不保护：设置目录为Microsoft Defender白名单 C：minGW,cygwin,gnuwin32区别 minGW给那些习惯于再Linux上开发的人员，在windows上提供了一套类似的工具集。 cygwin主要是对于再Linux的程序，无需改动代码即可移植到windows上 gnuwin32主要是对习惯linux工具的人员，在windows上提供一套类似的命令。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://slientlamb.github.io/post/windows%E4%B8%8Bgnu%E5%92%8Cmicrosoftdefender%E7%99%BD%E5%90%8D%E5%8D%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-07-13T14:59:29+08:00" />
+<meta property="article:modified_time" content="2022-07-13T14:59:29+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Q&amp;A windows下使用wget等linux命令 &amp;&amp; godzilla目录设置白名单"/>
+<meta name="twitter:description" content="Q1:godzilla用浏览器下载会报毒然后删除，就想着用wget命令行下载 环境：shell：powershell
+A1:安装GNUWIN32 https://sourceforge.net/projects/gnuwin32/files/ 有以下命令：
+Name Modified Downloads / Week sed 2010-12-28 2,136 m4 2010-05-26 319 dehtml 2010-02-11 0 libpng 2009-06-04 319 file 2009-05-07 289 bison 2009-05-04 847 indent 2009-02-15 162 grep 2009-02-13 921 tree 2009-02-09 334 fatattr 2009-02-01 105 ed 2009-02-01 170 mktemp 2009-01-11 114 groff 2009-01-10 216 wget 2008-12-31 4,036 tre 2008-12-20 214 hello 2008-12-10 149 glpk 2008-12-04 200 openssl 2008-12-04 978 dmidecode 2008-12-03 143 grap 2008-10-28 96 autoconf 2008-10-16 152 texinfo 2008-10-02 194 units 2008-09-28 122 util-linux 2008-09-28 277 cygutils 2008-09-26 179 troff 2008-09-23 85 which 2008-08-10 84 sunrpc 2008-08-09 86 rpl 2008-07-19 89 zip 2008-07-13 840 libarchive 2008-06-27 200 crafty 2008-06-13 100 x86info 2008-06-13 95 t1utils 2008-03-24 106 bzip2 2008-03-20 500 freetype 2008-03-14 308 a2ps 2008-03-14 197 libtool 2008-02-10 150 gawk 2008-02-10 571 nawk 2008-02-09 76 gsar 2008-02-04 73 minised 2008-01-05 75 readline 2008-01-02 143 regex 2007-11-03 320 gzip 2007-10-15 609 diction 2007-09-13 107 gengetopt 2007-07-07 129 patch 2007-05-15 810 libpaper 2007-05-09 159 barcode 2007-05-09 212 pcre 2007-04-03 220 libungif 2007-03-01 209 giflib 2007-02-21 232 regex-Spencer 2006-12-19 3 make 2006-11-25 6,923 gsl 2006-07-11 211 tiff 2006-03-30 311 fax2png 2006-03-29 161 cpio 2006-03-09 154 id-utils 2006-03-09 157 gri 2006-01-29 92 libiconv 2006-01-29 528 edll-bfd 2006-01-08 94 edll 2006-01-08 87 less 2006-01-03 124 src-highlite 2005-11-19 56 rx 2005-11-19 84 psutils 2005-11-19 82 piechart 2005-11-19 80 pbmadd 2005-11-19 55 mawk 2005-11-19 58 libart_lgpl 2005-11-19 88 lha 2005-11-19 99 jpeg2ps 2005-11-19 75 doschk 2005-11-19 73 compface 2005-11-19 116 chsuf 2005-11-19 76 awka 2005-11-19 110 asciichart 2005-11-19 110 arj 2005-11-19 83 filetype 2005-09-10 99 jwhois 2005-09-09 124 zimg 2005-08-26 152 gd 2005-08-26 148 libopennet 2005-08-20 126 libconfig 2005-08-20 183 t1lib 2005-08-13 141 pdflib-lite 2005-08-13 137 hodie 2005-07-31 97 cpuid 2005-07-31 108 zlib 2005-07-25 662 jpeg 2005-05-15 295 hp2xx 2005-05-14 211 netpbm 2005-05-12 262 libintl 2005-05-07 361 gettext 2005-05-07 284 help2man 2005-04-24 100 cproto 2005-04-24 103 coreutils 2005-04-21 2,375 findutils 2005-04-18 167 arc 2005-04-11 77 re2c 2005-03-15 80 nenscript 2005-03-13 74 pdcurses 2005-03-13 112 calc 2005-03-12 154 bc 2005-03-11 144 unrar 2005-02-20 156 xpm 2005-02-14 172 xpm2wico 2005-02-14 108 unzip 2005-02-14 375 unrtf 2005-02-12 105 sgrep 2005-01-31 106 libwmf 2005-01-18 205 psmark 2005-01-17 112 automake 2004-12-19 134 gdbm 2004-12-18 183 iristools 2004-11-28 245 gcal 2004-11-28 160 wv 2004-11-21 210 gperf 2004-11-14 356 miscfiles 2004-10-24 48 jbigkit 2004-06-11 153 diffutils 2004-05-24 941 plotutils 2004-04-16 168 libxmi 2004-04-16 127 flex 2004-04-11 541 deroff 2004-03-24 151 fdlibm 2004-03-24 135 ntfsprogs 2004-03-15 208 attr 2004-03-15 192 mscompress 2004-03-14 109 sharutils 2004-03-12 150 pngutils 2004-01-26 144 libgw32c 2004-01-10 207 ttf2pt1 2004-01-02 196 urt 2003-12-27 177 btyacc 2003-10-30 86 chess 2003-10-25 91 polyglotman (rman) 2003-10-18 85 xpdf 2003-10-14 88 byacc 2003-10-04 95 popt 2003-10-04 174 tar 2003-10-03 394 libutf8 2003-09-27 151 enscript 2003-07-19 105 palm pilot 2003-03-30 231 hextools 2003-03-04 122 hex2bin 2003-03-04 140 bmp2png 2002-07-07 57 imgtops2 2002-07-05 223 libxml 2002-06-23 340 crypt 2002-04-30 331 termcap 2002-03-16 329 glibc-doc 2002-02-02 1 gcc-doc 2002-01-27 112 libxslt 2001-12-23 339 cppi 2001-12-08 112 scribe2latex 2001-08-08 233 bm2font 2001-05-23 243 dvidjk 2001-04-10 235 Q2：godzilla被chrome、Microsoft Defender删除 A2 chrome设置不保护：设置目录为Microsoft Defender白名单 C：minGW,cygwin,gnuwin32区别 minGW给那些习惯于再Linux上开发的人员，在windows上提供了一套类似的工具集。 cygwin主要是对于再Linux的程序，无需改动代码即可移植到windows上 gnuwin32主要是对习惯linux工具的人员，在windows上提供一套类似的命令。"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://slientlamb.github.io/post/windows%E4%B8%8Bgnu%E5%92%8Cmicrosoftdefender%E7%99%BD%E5%90%8D%E5%8D%95/" /><link rel="prev" href="https://slientlamb.github.io/post/64621319/" /><link rel="next" href="https://slientlamb.github.io/post/97188785/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Q\u0026A windows下使用wget等linux命令 \u0026\u0026 godzilla目录设置白名单",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/slientlamb.github.io\/post\/windows%E4%B8%8Bgnu%E5%92%8Cmicrosoftdefender%E7%99%BD%E5%90%8D%E5%8D%95\/"
+        },"genre": "post","keywords": "经验","wordcount":  506 ,
+        "url": "https:\/\/slientlamb.github.io\/post\/windows%E4%B8%8Bgnu%E5%92%8Cmicrosoftdefender%E7%99%BD%E5%90%8D%E5%8D%95\/","datePublished": "2022-07-13T14:59:29+08:00","dateModified": "2022-07-13T14:59:29+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">rxgltc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">rxgltc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">Q&amp;A windows下使用wget等linux命令 &amp;&amp; godzilla目录设置白名单</h1><div class="content" id="content"><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="q1godzilla用浏览器下载会报毒然后删除就想着用wget命令行下载">Q1:godzilla用浏览器下载会报毒然后删除，就想着用wget命令行下载</h2>
+<p>环境：<!-- raw HTML omitted -->shell：powershell</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="a1安装gnuwin32">A1:安装GNUWIN32</h2>
+<p><a href="https://sourceforge.net/projects/gnuwin32/files/" target="_blank" rel="noopener noreffer">https://sourceforge.net/projects/gnuwin32/files/</a>
+<!-- raw HTML omitted -->有以下命令：</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Modified</th>
+<th>Downloads / Week</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/sed/" target="_blank" rel="noopener noreffer">sed</a>
+</td>
+<td>2010-12-28</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/sed/stats/timeline" target="_blank" rel="noopener noreffer">2,136</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/m4/" target="_blank" rel="noopener noreffer">m4</a>
+</td>
+<td>2010-05-26</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/m4/stats/timeline" target="_blank" rel="noopener noreffer">319</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/dehtml/" target="_blank" rel="noopener noreffer">dehtml</a>
+</td>
+<td>2010-02-11</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/dehtml/stats/timeline" target="_blank" rel="noopener noreffer">0</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libpng/" target="_blank" rel="noopener noreffer">libpng</a>
+</td>
+<td>2009-06-04</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libpng/stats/timeline" target="_blank" rel="noopener noreffer">319</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/file/" target="_blank" rel="noopener noreffer">file</a>
+</td>
+<td>2009-05-07</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/file/stats/timeline" target="_blank" rel="noopener noreffer">289</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/bison/" target="_blank" rel="noopener noreffer">bison</a>
+</td>
+<td>2009-05-04</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/bison/stats/timeline" target="_blank" rel="noopener noreffer">847</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/indent/" target="_blank" rel="noopener noreffer">indent</a>
+</td>
+<td>2009-02-15</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/indent/stats/timeline" target="_blank" rel="noopener noreffer">162</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/grep/" target="_blank" rel="noopener noreffer">grep</a>
+</td>
+<td>2009-02-13</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/grep/stats/timeline" target="_blank" rel="noopener noreffer">921</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/tree/" target="_blank" rel="noopener noreffer">tree</a>
+</td>
+<td>2009-02-09</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/tree/stats/timeline" target="_blank" rel="noopener noreffer">334</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/fatattr/" target="_blank" rel="noopener noreffer">fatattr</a>
+</td>
+<td>2009-02-01</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/fatattr/stats/timeline" target="_blank" rel="noopener noreffer">105</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/ed/" target="_blank" rel="noopener noreffer">ed</a>
+</td>
+<td>2009-02-01</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/ed/stats/timeline" target="_blank" rel="noopener noreffer">170</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/mktemp/" target="_blank" rel="noopener noreffer">mktemp</a>
+</td>
+<td>2009-01-11</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/mktemp/stats/timeline" target="_blank" rel="noopener noreffer">114</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/groff/" target="_blank" rel="noopener noreffer">groff</a>
+</td>
+<td>2009-01-10</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/groff/stats/timeline" target="_blank" rel="noopener noreffer">216</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/wget/" target="_blank" rel="noopener noreffer">wget</a>
+</td>
+<td>2008-12-31</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/wget/stats/timeline" target="_blank" rel="noopener noreffer">4,036</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/tre/" target="_blank" rel="noopener noreffer">tre</a>
+</td>
+<td>2008-12-20</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/tre/stats/timeline" target="_blank" rel="noopener noreffer">214</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/hello/" target="_blank" rel="noopener noreffer">hello</a>
+</td>
+<td>2008-12-10</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/hello/stats/timeline" target="_blank" rel="noopener noreffer">149</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/glpk/" target="_blank" rel="noopener noreffer">glpk</a>
+</td>
+<td>2008-12-04</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/glpk/stats/timeline" target="_blank" rel="noopener noreffer">200</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/openssl/" target="_blank" rel="noopener noreffer">openssl</a>
+</td>
+<td>2008-12-04</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/openssl/stats/timeline" target="_blank" rel="noopener noreffer">978</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/dmidecode/" target="_blank" rel="noopener noreffer">dmidecode</a>
+</td>
+<td>2008-12-03</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/dmidecode/stats/timeline" target="_blank" rel="noopener noreffer">143</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/grap/" target="_blank" rel="noopener noreffer">grap</a>
+</td>
+<td>2008-10-28</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/grap/stats/timeline" target="_blank" rel="noopener noreffer">96</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/autoconf/" target="_blank" rel="noopener noreffer">autoconf</a>
+</td>
+<td>2008-10-16</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/autoconf/stats/timeline" target="_blank" rel="noopener noreffer">152</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/texinfo/" target="_blank" rel="noopener noreffer">texinfo</a>
+</td>
+<td>2008-10-02</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/texinfo/stats/timeline" target="_blank" rel="noopener noreffer">194</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/units/" target="_blank" rel="noopener noreffer">units</a>
+</td>
+<td>2008-09-28</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/units/stats/timeline" target="_blank" rel="noopener noreffer">122</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/util-linux/" target="_blank" rel="noopener noreffer">util-linux</a>
+</td>
+<td>2008-09-28</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/util-linux/stats/timeline" target="_blank" rel="noopener noreffer">277</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/cygutils/" target="_blank" rel="noopener noreffer">cygutils</a>
+</td>
+<td>2008-09-26</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/cygutils/stats/timeline" target="_blank" rel="noopener noreffer">179</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/troff/" target="_blank" rel="noopener noreffer">troff</a>
+</td>
+<td>2008-09-23</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/troff/stats/timeline" target="_blank" rel="noopener noreffer">85</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/which/" target="_blank" rel="noopener noreffer">which</a>
+</td>
+<td>2008-08-10</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/which/stats/timeline" target="_blank" rel="noopener noreffer">84</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/sunrpc/" target="_blank" rel="noopener noreffer">sunrpc</a>
+</td>
+<td>2008-08-09</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/sunrpc/stats/timeline" target="_blank" rel="noopener noreffer">86</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/rpl/" target="_blank" rel="noopener noreffer">rpl</a>
+</td>
+<td>2008-07-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/rpl/stats/timeline" target="_blank" rel="noopener noreffer">89</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/zip/" target="_blank" rel="noopener noreffer">zip</a>
+</td>
+<td>2008-07-13</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/zip/stats/timeline" target="_blank" rel="noopener noreffer">840</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libarchive/" target="_blank" rel="noopener noreffer">libarchive</a>
+</td>
+<td>2008-06-27</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libarchive/stats/timeline" target="_blank" rel="noopener noreffer">200</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/crafty/" target="_blank" rel="noopener noreffer">crafty</a>
+</td>
+<td>2008-06-13</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/crafty/stats/timeline" target="_blank" rel="noopener noreffer">100</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/x86info/" target="_blank" rel="noopener noreffer">x86info</a>
+</td>
+<td>2008-06-13</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/x86info/stats/timeline" target="_blank" rel="noopener noreffer">95</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/t1utils/" target="_blank" rel="noopener noreffer">t1utils</a>
+</td>
+<td>2008-03-24</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/t1utils/stats/timeline" target="_blank" rel="noopener noreffer">106</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/bzip2/" target="_blank" rel="noopener noreffer">bzip2</a>
+</td>
+<td>2008-03-20</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/bzip2/stats/timeline" target="_blank" rel="noopener noreffer">500</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/freetype/" target="_blank" rel="noopener noreffer">freetype</a>
+</td>
+<td>2008-03-14</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/freetype/stats/timeline" target="_blank" rel="noopener noreffer">308</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/a2ps/" target="_blank" rel="noopener noreffer">a2ps</a>
+</td>
+<td>2008-03-14</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/a2ps/stats/timeline" target="_blank" rel="noopener noreffer">197</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libtool/" target="_blank" rel="noopener noreffer">libtool</a>
+</td>
+<td>2008-02-10</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libtool/stats/timeline" target="_blank" rel="noopener noreffer">150</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gawk/" target="_blank" rel="noopener noreffer">gawk</a>
+</td>
+<td>2008-02-10</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gawk/stats/timeline" target="_blank" rel="noopener noreffer">571</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/nawk/" target="_blank" rel="noopener noreffer">nawk</a>
+</td>
+<td>2008-02-09</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/nawk/stats/timeline" target="_blank" rel="noopener noreffer">76</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gsar/" target="_blank" rel="noopener noreffer">gsar</a>
+</td>
+<td>2008-02-04</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gsar/stats/timeline" target="_blank" rel="noopener noreffer">73</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/minised/" target="_blank" rel="noopener noreffer">minised</a>
+</td>
+<td>2008-01-05</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/minised/stats/timeline" target="_blank" rel="noopener noreffer">75</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/readline/" target="_blank" rel="noopener noreffer">readline</a>
+</td>
+<td>2008-01-02</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/readline/stats/timeline" target="_blank" rel="noopener noreffer">143</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/regex/" target="_blank" rel="noopener noreffer">regex</a>
+</td>
+<td>2007-11-03</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/regex/stats/timeline" target="_blank" rel="noopener noreffer">320</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gzip/" target="_blank" rel="noopener noreffer">gzip</a>
+</td>
+<td>2007-10-15</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gzip/stats/timeline" target="_blank" rel="noopener noreffer">609</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/diction/" target="_blank" rel="noopener noreffer">diction</a>
+</td>
+<td>2007-09-13</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/diction/stats/timeline" target="_blank" rel="noopener noreffer">107</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gengetopt/" target="_blank" rel="noopener noreffer">gengetopt</a>
+</td>
+<td>2007-07-07</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gengetopt/stats/timeline" target="_blank" rel="noopener noreffer">129</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/patch/" target="_blank" rel="noopener noreffer">patch</a>
+</td>
+<td>2007-05-15</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/patch/stats/timeline" target="_blank" rel="noopener noreffer">810</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libpaper/" target="_blank" rel="noopener noreffer">libpaper</a>
+</td>
+<td>2007-05-09</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libpaper/stats/timeline" target="_blank" rel="noopener noreffer">159</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/barcode/" target="_blank" rel="noopener noreffer">barcode</a>
+</td>
+<td>2007-05-09</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/barcode/stats/timeline" target="_blank" rel="noopener noreffer">212</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/pcre/" target="_blank" rel="noopener noreffer">pcre</a>
+</td>
+<td>2007-04-03</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/pcre/stats/timeline" target="_blank" rel="noopener noreffer">220</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libungif/" target="_blank" rel="noopener noreffer">libungif</a>
+</td>
+<td>2007-03-01</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libungif/stats/timeline" target="_blank" rel="noopener noreffer">209</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/giflib/" target="_blank" rel="noopener noreffer">giflib</a>
+</td>
+<td>2007-02-21</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/giflib/stats/timeline" target="_blank" rel="noopener noreffer">232</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/regex-Spencer/" target="_blank" rel="noopener noreffer">regex-Spencer</a>
+</td>
+<td>2006-12-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/regex-Spencer/stats/timeline" target="_blank" rel="noopener noreffer">3</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/make/" target="_blank" rel="noopener noreffer">make</a>
+</td>
+<td>2006-11-25</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/make/stats/timeline" target="_blank" rel="noopener noreffer">6,923</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gsl/" target="_blank" rel="noopener noreffer">gsl</a>
+</td>
+<td>2006-07-11</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gsl/stats/timeline" target="_blank" rel="noopener noreffer">211</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/tiff/" target="_blank" rel="noopener noreffer">tiff</a>
+</td>
+<td>2006-03-30</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/tiff/stats/timeline" target="_blank" rel="noopener noreffer">311</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/fax2png/" target="_blank" rel="noopener noreffer">fax2png</a>
+</td>
+<td>2006-03-29</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/fax2png/stats/timeline" target="_blank" rel="noopener noreffer">161</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/cpio/" target="_blank" rel="noopener noreffer">cpio</a>
+</td>
+<td>2006-03-09</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/cpio/stats/timeline" target="_blank" rel="noopener noreffer">154</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/id-utils/" target="_blank" rel="noopener noreffer">id-utils</a>
+</td>
+<td>2006-03-09</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/id-utils/stats/timeline" target="_blank" rel="noopener noreffer">157</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gri/" target="_blank" rel="noopener noreffer">gri</a>
+</td>
+<td>2006-01-29</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gri/stats/timeline" target="_blank" rel="noopener noreffer">92</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libiconv/" target="_blank" rel="noopener noreffer">libiconv</a>
+</td>
+<td>2006-01-29</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libiconv/stats/timeline" target="_blank" rel="noopener noreffer">528</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/edll-bfd/" target="_blank" rel="noopener noreffer">edll-bfd</a>
+</td>
+<td>2006-01-08</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/edll-bfd/stats/timeline" target="_blank" rel="noopener noreffer">94</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/edll/" target="_blank" rel="noopener noreffer">edll</a>
+</td>
+<td>2006-01-08</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/edll/stats/timeline" target="_blank" rel="noopener noreffer">87</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/less/" target="_blank" rel="noopener noreffer">less</a>
+</td>
+<td>2006-01-03</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/less/stats/timeline" target="_blank" rel="noopener noreffer">124</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/src-highlite/" target="_blank" rel="noopener noreffer">src-highlite</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/src-highlite/stats/timeline" target="_blank" rel="noopener noreffer">56</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/rx/" target="_blank" rel="noopener noreffer">rx</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/rx/stats/timeline" target="_blank" rel="noopener noreffer">84</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/psutils/" target="_blank" rel="noopener noreffer">psutils</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/psutils/stats/timeline" target="_blank" rel="noopener noreffer">82</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/piechart/" target="_blank" rel="noopener noreffer">piechart</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/piechart/stats/timeline" target="_blank" rel="noopener noreffer">80</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/pbmadd/" target="_blank" rel="noopener noreffer">pbmadd</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/pbmadd/stats/timeline" target="_blank" rel="noopener noreffer">55</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/mawk/" target="_blank" rel="noopener noreffer">mawk</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/mawk/stats/timeline" target="_blank" rel="noopener noreffer">58</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libart_lgpl/" target="_blank" rel="noopener noreffer">libart_lgpl</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libart_lgpl/stats/timeline" target="_blank" rel="noopener noreffer">88</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/lha/" target="_blank" rel="noopener noreffer">lha</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/lha/stats/timeline" target="_blank" rel="noopener noreffer">99</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/jpeg2ps/" target="_blank" rel="noopener noreffer">jpeg2ps</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/jpeg2ps/stats/timeline" target="_blank" rel="noopener noreffer">75</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/doschk/" target="_blank" rel="noopener noreffer">doschk</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/doschk/stats/timeline" target="_blank" rel="noopener noreffer">73</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/compface/" target="_blank" rel="noopener noreffer">compface</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/compface/stats/timeline" target="_blank" rel="noopener noreffer">116</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/chsuf/" target="_blank" rel="noopener noreffer">chsuf</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/chsuf/stats/timeline" target="_blank" rel="noopener noreffer">76</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/awka/" target="_blank" rel="noopener noreffer">awka</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/awka/stats/timeline" target="_blank" rel="noopener noreffer">110</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/asciichart/" target="_blank" rel="noopener noreffer">asciichart</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/asciichart/stats/timeline" target="_blank" rel="noopener noreffer">110</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/arj/" target="_blank" rel="noopener noreffer">arj</a>
+</td>
+<td>2005-11-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/arj/stats/timeline" target="_blank" rel="noopener noreffer">83</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/filetype/" target="_blank" rel="noopener noreffer">filetype</a>
+</td>
+<td>2005-09-10</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/filetype/stats/timeline" target="_blank" rel="noopener noreffer">99</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/jwhois/" target="_blank" rel="noopener noreffer">jwhois</a>
+</td>
+<td>2005-09-09</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/jwhois/stats/timeline" target="_blank" rel="noopener noreffer">124</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/zimg/" target="_blank" rel="noopener noreffer">zimg</a>
+</td>
+<td>2005-08-26</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/zimg/stats/timeline" target="_blank" rel="noopener noreffer">152</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gd/" target="_blank" rel="noopener noreffer">gd</a>
+</td>
+<td>2005-08-26</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gd/stats/timeline" target="_blank" rel="noopener noreffer">148</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libopennet/" target="_blank" rel="noopener noreffer">libopennet</a>
+</td>
+<td>2005-08-20</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libopennet/stats/timeline" target="_blank" rel="noopener noreffer">126</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libconfig/" target="_blank" rel="noopener noreffer">libconfig</a>
+</td>
+<td>2005-08-20</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libconfig/stats/timeline" target="_blank" rel="noopener noreffer">183</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/t1lib/" target="_blank" rel="noopener noreffer">t1lib</a>
+</td>
+<td>2005-08-13</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/t1lib/stats/timeline" target="_blank" rel="noopener noreffer">141</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/pdflib-lite/" target="_blank" rel="noopener noreffer">pdflib-lite</a>
+</td>
+<td>2005-08-13</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/pdflib-lite/stats/timeline" target="_blank" rel="noopener noreffer">137</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/hodie/" target="_blank" rel="noopener noreffer">hodie</a>
+</td>
+<td>2005-07-31</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/hodie/stats/timeline" target="_blank" rel="noopener noreffer">97</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/cpuid/" target="_blank" rel="noopener noreffer">cpuid</a>
+</td>
+<td>2005-07-31</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/cpuid/stats/timeline" target="_blank" rel="noopener noreffer">108</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/zlib/" target="_blank" rel="noopener noreffer">zlib</a>
+</td>
+<td>2005-07-25</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/zlib/stats/timeline" target="_blank" rel="noopener noreffer">662</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/jpeg/" target="_blank" rel="noopener noreffer">jpeg</a>
+</td>
+<td>2005-05-15</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/jpeg/stats/timeline" target="_blank" rel="noopener noreffer">295</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/hp2xx/" target="_blank" rel="noopener noreffer">hp2xx</a>
+</td>
+<td>2005-05-14</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/hp2xx/stats/timeline" target="_blank" rel="noopener noreffer">211</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/netpbm/" target="_blank" rel="noopener noreffer">netpbm</a>
+</td>
+<td>2005-05-12</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/netpbm/stats/timeline" target="_blank" rel="noopener noreffer">262</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libintl/" target="_blank" rel="noopener noreffer">libintl</a>
+</td>
+<td>2005-05-07</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libintl/stats/timeline" target="_blank" rel="noopener noreffer">361</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gettext/" target="_blank" rel="noopener noreffer">gettext</a>
+</td>
+<td>2005-05-07</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gettext/stats/timeline" target="_blank" rel="noopener noreffer">284</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/help2man/" target="_blank" rel="noopener noreffer">help2man</a>
+</td>
+<td>2005-04-24</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/help2man/stats/timeline" target="_blank" rel="noopener noreffer">100</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/cproto/" target="_blank" rel="noopener noreffer">cproto</a>
+</td>
+<td>2005-04-24</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/cproto/stats/timeline" target="_blank" rel="noopener noreffer">103</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/coreutils/" target="_blank" rel="noopener noreffer">coreutils</a>
+</td>
+<td>2005-04-21</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/coreutils/stats/timeline" target="_blank" rel="noopener noreffer">2,375</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/findutils/" target="_blank" rel="noopener noreffer">findutils</a>
+</td>
+<td>2005-04-18</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/findutils/stats/timeline" target="_blank" rel="noopener noreffer">167</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/arc/" target="_blank" rel="noopener noreffer">arc</a>
+</td>
+<td>2005-04-11</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/arc/stats/timeline" target="_blank" rel="noopener noreffer">77</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/re2c/" target="_blank" rel="noopener noreffer">re2c</a>
+</td>
+<td>2005-03-15</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/re2c/stats/timeline" target="_blank" rel="noopener noreffer">80</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/nenscript/" target="_blank" rel="noopener noreffer">nenscript</a>
+</td>
+<td>2005-03-13</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/nenscript/stats/timeline" target="_blank" rel="noopener noreffer">74</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/pdcurses/" target="_blank" rel="noopener noreffer">pdcurses</a>
+</td>
+<td>2005-03-13</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/pdcurses/stats/timeline" target="_blank" rel="noopener noreffer">112</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/calc/" target="_blank" rel="noopener noreffer">calc</a>
+</td>
+<td>2005-03-12</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/calc/stats/timeline" target="_blank" rel="noopener noreffer">154</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/bc/" target="_blank" rel="noopener noreffer">bc</a>
+</td>
+<td>2005-03-11</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/bc/stats/timeline" target="_blank" rel="noopener noreffer">144</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/unrar/" target="_blank" rel="noopener noreffer">unrar</a>
+</td>
+<td>2005-02-20</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/unrar/stats/timeline" target="_blank" rel="noopener noreffer">156</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/xpm/" target="_blank" rel="noopener noreffer">xpm</a>
+</td>
+<td>2005-02-14</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/xpm/stats/timeline" target="_blank" rel="noopener noreffer">172</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/xpm2wico/" target="_blank" rel="noopener noreffer">xpm2wico</a>
+</td>
+<td>2005-02-14</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/xpm2wico/stats/timeline" target="_blank" rel="noopener noreffer">108</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/unzip/" target="_blank" rel="noopener noreffer">unzip</a>
+</td>
+<td>2005-02-14</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/unzip/stats/timeline" target="_blank" rel="noopener noreffer">375</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/unrtf/" target="_blank" rel="noopener noreffer">unrtf</a>
+</td>
+<td>2005-02-12</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/unrtf/stats/timeline" target="_blank" rel="noopener noreffer">105</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/sgrep/" target="_blank" rel="noopener noreffer">sgrep</a>
+</td>
+<td>2005-01-31</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/sgrep/stats/timeline" target="_blank" rel="noopener noreffer">106</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libwmf/" target="_blank" rel="noopener noreffer">libwmf</a>
+</td>
+<td>2005-01-18</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libwmf/stats/timeline" target="_blank" rel="noopener noreffer">205</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/psmark/" target="_blank" rel="noopener noreffer">psmark</a>
+</td>
+<td>2005-01-17</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/psmark/stats/timeline" target="_blank" rel="noopener noreffer">112</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/automake/" target="_blank" rel="noopener noreffer">automake</a>
+</td>
+<td>2004-12-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/automake/stats/timeline" target="_blank" rel="noopener noreffer">134</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gdbm/" target="_blank" rel="noopener noreffer">gdbm</a>
+</td>
+<td>2004-12-18</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gdbm/stats/timeline" target="_blank" rel="noopener noreffer">183</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/iristools/" target="_blank" rel="noopener noreffer">iristools</a>
+</td>
+<td>2004-11-28</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/iristools/stats/timeline" target="_blank" rel="noopener noreffer">245</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gcal/" target="_blank" rel="noopener noreffer">gcal</a>
+</td>
+<td>2004-11-28</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gcal/stats/timeline" target="_blank" rel="noopener noreffer">160</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/wv/" target="_blank" rel="noopener noreffer">wv</a>
+</td>
+<td>2004-11-21</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/wv/stats/timeline" target="_blank" rel="noopener noreffer">210</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gperf/" target="_blank" rel="noopener noreffer">gperf</a>
+</td>
+<td>2004-11-14</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gperf/stats/timeline" target="_blank" rel="noopener noreffer">356</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/miscfiles/" target="_blank" rel="noopener noreffer">miscfiles</a>
+</td>
+<td>2004-10-24</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/miscfiles/stats/timeline" target="_blank" rel="noopener noreffer">48</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/jbigkit/" target="_blank" rel="noopener noreffer">jbigkit</a>
+</td>
+<td>2004-06-11</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/jbigkit/stats/timeline" target="_blank" rel="noopener noreffer">153</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/diffutils/" target="_blank" rel="noopener noreffer">diffutils</a>
+</td>
+<td>2004-05-24</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/diffutils/stats/timeline" target="_blank" rel="noopener noreffer">941</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/plotutils/" target="_blank" rel="noopener noreffer">plotutils</a>
+</td>
+<td>2004-04-16</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/plotutils/stats/timeline" target="_blank" rel="noopener noreffer">168</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libxmi/" target="_blank" rel="noopener noreffer">libxmi</a>
+</td>
+<td>2004-04-16</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libxmi/stats/timeline" target="_blank" rel="noopener noreffer">127</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/flex/" target="_blank" rel="noopener noreffer">flex</a>
+</td>
+<td>2004-04-11</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/flex/stats/timeline" target="_blank" rel="noopener noreffer">541</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/deroff/" target="_blank" rel="noopener noreffer">deroff</a>
+</td>
+<td>2004-03-24</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/deroff/stats/timeline" target="_blank" rel="noopener noreffer">151</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/fdlibm/" target="_blank" rel="noopener noreffer">fdlibm</a>
+</td>
+<td>2004-03-24</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/fdlibm/stats/timeline" target="_blank" rel="noopener noreffer">135</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/ntfsprogs/" target="_blank" rel="noopener noreffer">ntfsprogs</a>
+</td>
+<td>2004-03-15</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/ntfsprogs/stats/timeline" target="_blank" rel="noopener noreffer">208</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/attr/" target="_blank" rel="noopener noreffer">attr</a>
+</td>
+<td>2004-03-15</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/attr/stats/timeline" target="_blank" rel="noopener noreffer">192</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/mscompress/" target="_blank" rel="noopener noreffer">mscompress</a>
+</td>
+<td>2004-03-14</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/mscompress/stats/timeline" target="_blank" rel="noopener noreffer">109</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/sharutils/" target="_blank" rel="noopener noreffer">sharutils</a>
+</td>
+<td>2004-03-12</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/sharutils/stats/timeline" target="_blank" rel="noopener noreffer">150</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/pngutils/" target="_blank" rel="noopener noreffer">pngutils</a>
+</td>
+<td>2004-01-26</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/pngutils/stats/timeline" target="_blank" rel="noopener noreffer">144</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libgw32c/" target="_blank" rel="noopener noreffer">libgw32c</a>
+</td>
+<td>2004-01-10</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libgw32c/stats/timeline" target="_blank" rel="noopener noreffer">207</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/ttf2pt1/" target="_blank" rel="noopener noreffer">ttf2pt1</a>
+</td>
+<td>2004-01-02</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/ttf2pt1/stats/timeline" target="_blank" rel="noopener noreffer">196</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/urt/" target="_blank" rel="noopener noreffer">urt</a>
+</td>
+<td>2003-12-27</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/urt/stats/timeline" target="_blank" rel="noopener noreffer">177</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/btyacc/" target="_blank" rel="noopener noreffer">btyacc</a>
+</td>
+<td>2003-10-30</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/btyacc/stats/timeline" target="_blank" rel="noopener noreffer">86</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/chess/" target="_blank" rel="noopener noreffer">chess</a>
+</td>
+<td>2003-10-25</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/chess/stats/timeline" target="_blank" rel="noopener noreffer">91</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/polyglotman%20%28rman%29/" target="_blank" rel="noopener noreffer">polyglotman (rman)</a>
+</td>
+<td>2003-10-18</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/polyglotman%20%28rman%29/stats/timeline" target="_blank" rel="noopener noreffer">85</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/xpdf/" target="_blank" rel="noopener noreffer">xpdf</a>
+</td>
+<td>2003-10-14</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/xpdf/stats/timeline" target="_blank" rel="noopener noreffer">88</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/byacc/" target="_blank" rel="noopener noreffer">byacc</a>
+</td>
+<td>2003-10-04</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/byacc/stats/timeline" target="_blank" rel="noopener noreffer">95</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/popt/" target="_blank" rel="noopener noreffer">popt</a>
+</td>
+<td>2003-10-04</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/popt/stats/timeline" target="_blank" rel="noopener noreffer">174</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/tar/" target="_blank" rel="noopener noreffer">tar</a>
+</td>
+<td>2003-10-03</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/tar/stats/timeline" target="_blank" rel="noopener noreffer">394</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libutf8/" target="_blank" rel="noopener noreffer">libutf8</a>
+</td>
+<td>2003-09-27</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libutf8/stats/timeline" target="_blank" rel="noopener noreffer">151</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/enscript/" target="_blank" rel="noopener noreffer">enscript</a>
+</td>
+<td>2003-07-19</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/enscript/stats/timeline" target="_blank" rel="noopener noreffer">105</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/palm%20pilot/" target="_blank" rel="noopener noreffer">palm pilot</a>
+</td>
+<td>2003-03-30</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/palm%20pilot/stats/timeline" target="_blank" rel="noopener noreffer">231</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/hextools/" target="_blank" rel="noopener noreffer">hextools</a>
+</td>
+<td>2003-03-04</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/hextools/stats/timeline" target="_blank" rel="noopener noreffer">122</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/hex2bin/" target="_blank" rel="noopener noreffer">hex2bin</a>
+</td>
+<td>2003-03-04</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/hex2bin/stats/timeline" target="_blank" rel="noopener noreffer">140</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/bmp2png/" target="_blank" rel="noopener noreffer">bmp2png</a>
+</td>
+<td>2002-07-07</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/bmp2png/stats/timeline" target="_blank" rel="noopener noreffer">57</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/imgtops2/" target="_blank" rel="noopener noreffer">imgtops2</a>
+</td>
+<td>2002-07-05</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/imgtops2/stats/timeline" target="_blank" rel="noopener noreffer">223</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libxml/" target="_blank" rel="noopener noreffer">libxml</a>
+</td>
+<td>2002-06-23</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libxml/stats/timeline" target="_blank" rel="noopener noreffer">340</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/crypt/" target="_blank" rel="noopener noreffer">crypt</a>
+</td>
+<td>2002-04-30</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/crypt/stats/timeline" target="_blank" rel="noopener noreffer">331</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/termcap/" target="_blank" rel="noopener noreffer">termcap</a>
+</td>
+<td>2002-03-16</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/termcap/stats/timeline" target="_blank" rel="noopener noreffer">329</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/glibc-doc/" target="_blank" rel="noopener noreffer">glibc-doc</a>
+</td>
+<td>2002-02-02</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/glibc-doc/stats/timeline" target="_blank" rel="noopener noreffer">1</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gcc-doc/" target="_blank" rel="noopener noreffer">gcc-doc</a>
+</td>
+<td>2002-01-27</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/gcc-doc/stats/timeline" target="_blank" rel="noopener noreffer">112</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libxslt/" target="_blank" rel="noopener noreffer">libxslt</a>
+</td>
+<td>2001-12-23</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/libxslt/stats/timeline" target="_blank" rel="noopener noreffer">339</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/cppi/" target="_blank" rel="noopener noreffer">cppi</a>
+</td>
+<td>2001-12-08</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/cppi/stats/timeline" target="_blank" rel="noopener noreffer">112</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/scribe2latex/" target="_blank" rel="noopener noreffer">scribe2latex</a>
+</td>
+<td>2001-08-08</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/scribe2latex/stats/timeline" target="_blank" rel="noopener noreffer">233</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/bm2font/" target="_blank" rel="noopener noreffer">bm2font</a>
+</td>
+<td>2001-05-23</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/bm2font/stats/timeline" target="_blank" rel="noopener noreffer">243</a>
+</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/dvidjk/" target="_blank" rel="noopener noreffer">dvidjk</a>
+</td>
+<td>2001-04-10</td>
+<td><a href="https://sourceforge.net/projects/gnuwin32/files/dvidjk/stats/timeline" target="_blank" rel="noopener noreffer">235</a>
+</td>
+</tr>
+</tbody>
+</table>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="q2godzilla被chromemicrosoft-defender删除">Q2：godzilla被chrome、Microsoft Defender删除</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595102166-4c1740fc-2478-46c9-9827-0b21af5b886f.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=118&amp;id=u51148b69&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=148&amp;originWidth=881&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=19125&amp;status=done&amp;style=none&amp;taskId=u141a261b-3cf5-4453-86d6-d76b73cfb37&amp;title=&amp;width=704.8"
+        data-srcset="https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595102166-4c1740fc-2478-46c9-9827-0b21af5b886f.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=118&amp;id=u51148b69&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=148&amp;originWidth=881&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=19125&amp;status=done&amp;style=none&amp;taskId=u141a261b-3cf5-4453-86d6-d76b73cfb37&amp;title=&amp;width=704.8, https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595102166-4c1740fc-2478-46c9-9827-0b21af5b886f.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=118&amp;id=u51148b69&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=148&amp;originWidth=881&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=19125&amp;status=done&amp;style=none&amp;taskId=u141a261b-3cf5-4453-86d6-d76b73cfb37&amp;title=&amp;width=704.8 1.5x, https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595102166-4c1740fc-2478-46c9-9827-0b21af5b886f.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=118&amp;id=u51148b69&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=148&amp;originWidth=881&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=19125&amp;status=done&amp;style=none&amp;taskId=u141a261b-3cf5-4453-86d6-d76b73cfb37&amp;title=&amp;width=704.8 2x"
+        data-sizes="auto"
+        alt="https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595102166-4c1740fc-2478-46c9-9827-0b21af5b886f.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=118&amp;id=u51148b69&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=148&amp;originWidth=881&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=19125&amp;status=done&amp;style=none&amp;taskId=u141a261b-3cf5-4453-86d6-d76b73cfb37&amp;title=&amp;width=704.8"
+        title="image.png" /><!-- raw HTML omitted --><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595119681-f23f9fc2-dab6-4cd0-a71c-fda1c6dc65d8.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=407&amp;id=uefebf81a&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=509&amp;originWidth=387&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=44582&amp;status=done&amp;style=none&amp;taskId=ucc8b661e-d8e6-43ff-95dd-8740a33657d&amp;title=&amp;width=309.6"
+        data-srcset="https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595119681-f23f9fc2-dab6-4cd0-a71c-fda1c6dc65d8.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=407&amp;id=uefebf81a&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=509&amp;originWidth=387&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=44582&amp;status=done&amp;style=none&amp;taskId=ucc8b661e-d8e6-43ff-95dd-8740a33657d&amp;title=&amp;width=309.6, https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595119681-f23f9fc2-dab6-4cd0-a71c-fda1c6dc65d8.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=407&amp;id=uefebf81a&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=509&amp;originWidth=387&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=44582&amp;status=done&amp;style=none&amp;taskId=ucc8b661e-d8e6-43ff-95dd-8740a33657d&amp;title=&amp;width=309.6 1.5x, https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595119681-f23f9fc2-dab6-4cd0-a71c-fda1c6dc65d8.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=407&amp;id=uefebf81a&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=509&amp;originWidth=387&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=44582&amp;status=done&amp;style=none&amp;taskId=ucc8b661e-d8e6-43ff-95dd-8740a33657d&amp;title=&amp;width=309.6 2x"
+        data-sizes="auto"
+        alt="https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595119681-f23f9fc2-dab6-4cd0-a71c-fda1c6dc65d8.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=407&amp;id=uefebf81a&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=509&amp;originWidth=387&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=44582&amp;status=done&amp;style=none&amp;taskId=ucc8b661e-d8e6-43ff-95dd-8740a33657d&amp;title=&amp;width=309.6"
+        title="image.png" />
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="a2">A2</h2>
+<p>chrome设置不保护：<!-- raw HTML omitted --><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595170890-cc7b3290-615b-4863-804f-4eb09101c4cd.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=810&amp;id=ubf651c71&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1012&amp;originWidth=1920&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=118356&amp;status=done&amp;style=none&amp;taskId=udd838d62-9d71-4cd9-9153-2186d02d33a&amp;title=&amp;width=1536"
+        data-srcset="https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595170890-cc7b3290-615b-4863-804f-4eb09101c4cd.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=810&amp;id=ubf651c71&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1012&amp;originWidth=1920&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=118356&amp;status=done&amp;style=none&amp;taskId=udd838d62-9d71-4cd9-9153-2186d02d33a&amp;title=&amp;width=1536, https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595170890-cc7b3290-615b-4863-804f-4eb09101c4cd.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=810&amp;id=ubf651c71&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1012&amp;originWidth=1920&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=118356&amp;status=done&amp;style=none&amp;taskId=udd838d62-9d71-4cd9-9153-2186d02d33a&amp;title=&amp;width=1536 1.5x, https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595170890-cc7b3290-615b-4863-804f-4eb09101c4cd.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=810&amp;id=ubf651c71&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1012&amp;originWidth=1920&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=118356&amp;status=done&amp;style=none&amp;taskId=udd838d62-9d71-4cd9-9153-2186d02d33a&amp;title=&amp;width=1536 2x"
+        data-sizes="auto"
+        alt="https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595170890-cc7b3290-615b-4863-804f-4eb09101c4cd.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=810&amp;id=ubf651c71&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1012&amp;originWidth=1920&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=118356&amp;status=done&amp;style=none&amp;taskId=udd838d62-9d71-4cd9-9153-2186d02d33a&amp;title=&amp;width=1536"
+        title="image.png" /><!-- raw HTML omitted -->设置目录为Microsoft Defender白名单<!-- raw HTML omitted --><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595281997-0931d4c3-f6f0-4bcd-9624-172b5a693886.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=768&amp;id=u03c56428&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=960&amp;originWidth=1280&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=62364&amp;status=done&amp;style=none&amp;taskId=u752d6236-5265-473a-ac88-247b1f64fcf&amp;title=&amp;width=1024"
+        data-srcset="https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595281997-0931d4c3-f6f0-4bcd-9624-172b5a693886.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=768&amp;id=u03c56428&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=960&amp;originWidth=1280&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=62364&amp;status=done&amp;style=none&amp;taskId=u752d6236-5265-473a-ac88-247b1f64fcf&amp;title=&amp;width=1024, https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595281997-0931d4c3-f6f0-4bcd-9624-172b5a693886.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=768&amp;id=u03c56428&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=960&amp;originWidth=1280&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=62364&amp;status=done&amp;style=none&amp;taskId=u752d6236-5265-473a-ac88-247b1f64fcf&amp;title=&amp;width=1024 1.5x, https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595281997-0931d4c3-f6f0-4bcd-9624-172b5a693886.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=768&amp;id=u03c56428&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=960&amp;originWidth=1280&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=62364&amp;status=done&amp;style=none&amp;taskId=u752d6236-5265-473a-ac88-247b1f64fcf&amp;title=&amp;width=1024 2x"
+        data-sizes="auto"
+        alt="https://cdn.nlark.com/yuque/0/2022/png/12975819/1657595281997-0931d4c3-f6f0-4bcd-9624-172b5a693886.png#clientId=u66292628-4256-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=768&amp;id=u03c56428&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=960&amp;originWidth=1280&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=62364&amp;status=done&amp;style=none&amp;taskId=u752d6236-5265-473a-ac88-247b1f64fcf&amp;title=&amp;width=1024"
+        title="image.png" />
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="cmingwcygwingnuwin32区别">C：minGW,cygwin,gnuwin32区别</h2>
+<blockquote>
+<p>minGW给那些习惯于再Linux上开发的人员，在windows上提供了一套类似的工具集。
+cygwin主要是对于再Linux的程序，无需改动代码即可移植到windows上
+gnuwin32主要是对习惯linux工具的人员，在windows上提供一套类似的命令。</p>
+</blockquote>
+<p>minGW：<a href="https://link.zhihu.com/?target=http%3A//www.mingw.org/" target="_blank" rel="noopener noreffer">http://www.mingw.org</a>
+<!-- raw HTML omitted -->cygwin: <a href="https://link.zhihu.com/?target=http%3A//www.cygwin.com/" target="_blank" rel="noopener noreffer">http://www.cygwin.com</a>
+<!-- raw HTML omitted -->gnuwin32:<a href="https://link.zhihu.com/?target=http%3A//gnuwin32.sourceforge.net/" target="_blank" rel="noopener noreffer">http://gnuwin32.sourceforge.net</a>
+</p>
+<hr>
+<p>参考：<a href="https://zhuanlan.zhihu.com/p/507645921" target="_blank" rel="noopener noreffer">minGW,cygwin,gnuwin32区别做个记录</a>
+</p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

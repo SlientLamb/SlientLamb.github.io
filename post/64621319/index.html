@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Q&amp;A Golang在VS CODE环境下的配置 - </title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Q&amp;A Golang在VS CODE环境下的配置" />
+<meta property="og:description" content="新建系统变量GoPATH=C:\Program Files\Go安装插件 失败 尝试更改Go代理源
+设置GOPROXY代理： go env -w GOPROXY=https://goproxy.cn,direct
+设置GOPRIVATE来跳过私有库，比如常用的Gitlab或Gitee，中间使用逗号分隔： go env -w GOPRIVATE=*.gitlab.com,*.gitee.com
+再次安装插件，提示没有权限创建文件夹
+管理员权限打开VS CODE
+F5调试，出现报错
+go.mod file not found in current directory or any parent directory;
+网上找到解决办法go env -w GO111MODULE=auto
+GO111MODULE是 go modules 功能的开关，关于go modules本文不详述，这个涉及到go的一种很重要的管理机制，我们可以简单的理解为，在没有go modules机制时，go工程中对于第三方功能包的管理非常复杂，也非常专业，这就导致程序员在进行开发的时候，对于第三方功能包的管理很不方便，所以才有了go modules机制。这个机制的开关是通过GO111MODULE环境变量来配置的。 GO111MODULE=off，无模块支持，go命令行将不会支持module功能，寻找依赖包的方式将会沿用旧版本那种通过vendor目录或者GOPATH模式来查找。GO111MODULE=on，模块支持，go命令行会使用modules，而一点也不会去GOPATH目录下查找。GO111MODULE=auto，默认值，go命令行将会根据当前目录来决定是否启用module功能。这种情况下可以分为两种情形： （1）当前目录在GOPATH/src之外且该目录包含go.mod文件，开启模块支持。 （2）当前文件在包含go.mod文件的目录下面。
+问题解决
+Q&amp;A go install &amp; go version &amp; Linux下$HOME/.config " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://slientlamb.github.io/post/64621319/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-07-06T02:51:10+00:00" />
+<meta property="article:modified_time" content="2022-07-06T02:51:10+00:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Q&amp;A Golang在VS CODE环境下的配置"/>
+<meta name="twitter:description" content="新建系统变量GoPATH=C:\Program Files\Go安装插件 失败 尝试更改Go代理源
+设置GOPROXY代理： go env -w GOPROXY=https://goproxy.cn,direct
+设置GOPRIVATE来跳过私有库，比如常用的Gitlab或Gitee，中间使用逗号分隔： go env -w GOPRIVATE=*.gitlab.com,*.gitee.com
+再次安装插件，提示没有权限创建文件夹
+管理员权限打开VS CODE
+F5调试，出现报错
+go.mod file not found in current directory or any parent directory;
+网上找到解决办法go env -w GO111MODULE=auto
+GO111MODULE是 go modules 功能的开关，关于go modules本文不详述，这个涉及到go的一种很重要的管理机制，我们可以简单的理解为，在没有go modules机制时，go工程中对于第三方功能包的管理非常复杂，也非常专业，这就导致程序员在进行开发的时候，对于第三方功能包的管理很不方便，所以才有了go modules机制。这个机制的开关是通过GO111MODULE环境变量来配置的。 GO111MODULE=off，无模块支持，go命令行将不会支持module功能，寻找依赖包的方式将会沿用旧版本那种通过vendor目录或者GOPATH模式来查找。GO111MODULE=on，模块支持，go命令行会使用modules，而一点也不会去GOPATH目录下查找。GO111MODULE=auto，默认值，go命令行将会根据当前目录来决定是否启用module功能。这种情况下可以分为两种情形： （1）当前目录在GOPATH/src之外且该目录包含go.mod文件，开启模块支持。 （2）当前文件在包含go.mod文件的目录下面。
+问题解决
+Q&amp;A go install &amp; go version &amp; Linux下$HOME/.config "/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://slientlamb.github.io/post/64621319/" /><link rel="prev" href="https://slientlamb.github.io/post/68494508/" /><link rel="next" href="https://slientlamb.github.io/post/windows%E4%B8%8Bgnu%E5%92%8Cmicrosoftdefender%E7%99%BD%E5%90%8D%E5%8D%95/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Q\u0026A Golang在VS CODE环境下的配置",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/slientlamb.github.io\/post\/64621319\/"
+        },"genre": "post","wordcount":  52 ,
+        "url": "https:\/\/slientlamb.github.io\/post\/64621319\/","datePublished": "2022-07-06T02:51:10+00:00","dateModified": "2022-07-06T02:51:10+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">rxgltc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">rxgltc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">Q&amp;A Golang在VS CODE环境下的配置</h1><div class="content" id="content"><p>新建系统变量GoPATH=<code>C:\Program Files\Go</code><!-- raw HTML omitted -->安装插件 失败 尝试更改Go代理源</p>
+<hr>
+<ul>
+<li>设置GOPROXY代理：</li>
+</ul>
+<p><code>go env -w GOPROXY=https://goproxy.cn,direct</code></p>
+<ul>
+<li>设置GOPRIVATE来跳过私有库，比如常用的Gitlab或Gitee，中间使用逗号分隔：</li>
+</ul>
+<p><code>go env -w GOPRIVATE=*.gitlab.com,*.gitee.com</code></p>
+<hr>
+<p>再次安装插件，提示没有权限创建文件夹</p>
+<p>管理员权限打开VS CODE</p>
+<p>F5调试，出现报错</p>
+<hr>
+<p><code> go.mod file not found in current directory or any parent directory;</code></p>
+<p>网上找到解决办法<!-- raw HTML omitted --><code>go env -w GO111MODULE=auto</code></p>
+<blockquote>
+<p><strong>GO111MODULE</strong>是 go modules 功能的开关，关于go modules本文不详述，这个涉及到go的一种很重要的管理机制，我们可以简单的理解为，在没有go modules机制时，go工程中对于第三方功能包的管理非常复杂，也非常专业，这就导致程序员在进行开发的时候，对于第三方功能包的管理很不方便，所以才有了go modules机制。这个机制的开关是通过<strong>GO111MODULE环境变量</strong>来配置的。
+GO111MODULE=off，无模块支持，go命令行将不会支持module功能，寻找依赖包的方式将会沿用旧版本那种通过vendor目录或者GOPATH模式来查找。<!-- raw HTML omitted -->GO111MODULE=on，模块支持，go命令行会使用modules，而一点也不会去GOPATH目录下查找。<!-- raw HTML omitted --><strong>GO111MODULE=auto</strong>，默认值，go命令行将会根据当前目录来决定是否启用module功能。这种情况下可以分为两种情形：<!-- raw HTML omitted --> （1）当前目录在GOPATH/src之外且该目录包含go.mod文件，开启模块支持。<!-- raw HTML omitted --> （2）当前文件在包含go.mod文件的目录下面。</p>
+</blockquote>
+<p>问题解决</p>
+<p><a href="https://www.yuque.com/lake/xwnjcxq/zt0fr7?view=doc_embed" target="_blank" rel="noopener noreffer">Q&amp;A  go install  &amp; go version &amp;  Linux下$HOME/.config</a>
+</p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Categories on LAKE</title>
+        <title>Categories - Category - </title>
         <link>https://slientlamb.github.io/categories/</link>
-        <description>Recent content in Categories on LAKE</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <lastBuildDate>Wed, 13 Jul 2022 14:59:29 +0800</lastBuildDate><atom:link href="https://slientlamb.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>技术</title>
-        <link>https://slientlamb.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
-        <pubDate>Wed, 13 Jul 2022 14:59:29 +0800</pubDate>
-        
-        <guid>https://slientlamb.github.io/categories/%E6%8A%80%E6%9C%AF/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>遇见</title>
-        <link>https://slientlamb.github.io/categories/%E9%81%87%E8%A7%81/</link>
-        <pubDate>Thu, 16 Jun 2022 09:27:27 +0800</pubDate>
-        
-        <guid>https://slientlamb.github.io/categories/%E9%81%87%E8%A7%81/</guid>
-        <description>&lt;img src="https://slientlamb.github.io/categories/%E9%81%87%E8%A7%81/IMG_20170701_203532.jpg" alt="Featured image of post 遇见" /&gt;</description>
-        </item>
-        
-    </channel>
+        <description>Categories - Category - </description>
+        <generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 13 Jul 2022 14:59:29 &#43;0800</lastBuildDate><atom:link href="https://slientlamb.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>技术</title>
+    <link>https://slientlamb.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+    <pubDate>Wed, 13 Jul 2022 14:59:29 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://slientlamb.github.io/categories/%E6%8A%80%E6%9C%AF/</guid>
+    <description><![CDATA[技术文章，其实也不一定很技术QAQ]]></description>
+</item>
+<item>
+    <title>遇见</title>
+    <link>https://slientlamb.github.io/categories/%E9%81%87%E8%A7%81/</link>
+    <pubDate>Thu, 16 Jun 2022 09:27:27 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://slientlamb.github.io/categories/%E9%81%87%E8%A7%81/</guid>
+    <description><![CDATA[生活中的种种]]></description>
+</item>
+</channel>
 </rss>

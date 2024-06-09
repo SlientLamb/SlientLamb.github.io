@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Q&amp;A PHP中，回调函数和Hook - </title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Q&amp;A PHP中，回调函数和Hook" />
+<meta property="og:description" content="在PHP中，**回调函数（callback function）**是指可以作为参数传递给其他函数的函数。在PHP中，您可以将一个函数的名称作为字符串传递，或者使用一个数组，其中第一个元素是对象，第二个元素是方法名。回调函数通常用于事件处理、异步操作、排序等场景，通过回调函数可以灵活地实现不同的功能逻辑。 在PHP中，&ldquo;hook&quot;通常指的是钩子（hook），它是一种编程技术，允许开发者在不修改原始代码的情况下，通过在特定的位置插入自定义代码来扩展或修改程序的行为。通过使用钩子，您可以在应用程序的特定点（例如函数或事件）执行自定义代码，以实现更灵活的功能扩展和定制化。钩子通常与回调函数结合使用，以实现特定的业务逻辑或功能。 当涉及到回调函数和hook时，一段简单的PHP代码示例来说明它们的工作方式：
+// 回调函数示例 function greet($name, $callback) { echo &#34;Hello, &#34; . $name . &#34;! &#34;; $callback(); } function goodbye() { echo &#34;Goodbye!&#34;; } // 使用回调函数 greet(&#34;Alice&#34;, &#34;goodbye&#34;); // Hook示例 $hooks = array(); function add_hook($hook_name, $callback) { global $hooks; $hooks[$hook_name][] = $callback; } function run_hook($hook_name) { global $hooks; if (isset($hooks[$hook_name])) { foreach ($hooks[$hook_name] as $callback) { call_user_func($callback); } } } // 添加Hook add_hook(&#39;before_greet&#39;, &#39;goodbye&#39;); // 运行Hook run_hook(&#39;before_greet&#39;); 在这个简单的示例中，首先定义了一个greet函数，它接受一个名字和一个回调函数作为参数。当调用greet函数时，它会打印问候语并执行传递的回调函数。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://slientlamb.github.io/post/162742343/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-03-21T12:46:32+00:00" />
+<meta property="article:modified_time" content="2024-03-21T12:46:32+00:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Q&amp;A PHP中，回调函数和Hook"/>
+<meta name="twitter:description" content="在PHP中，**回调函数（callback function）**是指可以作为参数传递给其他函数的函数。在PHP中，您可以将一个函数的名称作为字符串传递，或者使用一个数组，其中第一个元素是对象，第二个元素是方法名。回调函数通常用于事件处理、异步操作、排序等场景，通过回调函数可以灵活地实现不同的功能逻辑。 在PHP中，&ldquo;hook&quot;通常指的是钩子（hook），它是一种编程技术，允许开发者在不修改原始代码的情况下，通过在特定的位置插入自定义代码来扩展或修改程序的行为。通过使用钩子，您可以在应用程序的特定点（例如函数或事件）执行自定义代码，以实现更灵活的功能扩展和定制化。钩子通常与回调函数结合使用，以实现特定的业务逻辑或功能。 当涉及到回调函数和hook时，一段简单的PHP代码示例来说明它们的工作方式：
+// 回调函数示例 function greet($name, $callback) { echo &#34;Hello, &#34; . $name . &#34;! &#34;; $callback(); } function goodbye() { echo &#34;Goodbye!&#34;; } // 使用回调函数 greet(&#34;Alice&#34;, &#34;goodbye&#34;); // Hook示例 $hooks = array(); function add_hook($hook_name, $callback) { global $hooks; $hooks[$hook_name][] = $callback; } function run_hook($hook_name) { global $hooks; if (isset($hooks[$hook_name])) { foreach ($hooks[$hook_name] as $callback) { call_user_func($callback); } } } // 添加Hook add_hook(&#39;before_greet&#39;, &#39;goodbye&#39;); // 运行Hook run_hook(&#39;before_greet&#39;); 在这个简单的示例中，首先定义了一个greet函数，它接受一个名字和一个回调函数作为参数。当调用greet函数时，它会打印问候语并执行传递的回调函数。"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://slientlamb.github.io/post/162742343/" /><link rel="prev" href="https://slientlamb.github.io/post/49070863/" /><link rel="next" href="https://slientlamb.github.io/post/97216040/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Q\u0026A PHP中，回调函数和Hook",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/slientlamb.github.io\/post\/162742343\/"
+        },"genre": "post","wordcount":  74 ,
+        "url": "https:\/\/slientlamb.github.io\/post\/162742343\/","datePublished": "2024-03-21T12:46:32+00:00","dateModified": "2024-03-21T12:46:32+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">rxgltc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">rxgltc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">Q&amp;A PHP中，回调函数和Hook</h1><div class="content" id="content"><ul>
+<li>在PHP中，**回调函数（callback function）**是指可以作为参数传递给其他函数的函数。在PHP中，您可以将一个函数的名称作为字符串传递，或者使用一个数组，其中第一个元素是对象，第二个元素是方法名。回调函数通常用于事件处理、异步操作、排序等场景，通过回调函数可以灵活地实现不同的功能逻辑。</li>
+<li>在PHP中，&ldquo;hook&quot;通常指的是钩子（hook），它是一种编程技术，允许开发者在不修改原始代码的情况下，通过在特定的位置插入自定义代码来扩展或修改程序的行为。通过使用钩子，您可以在应用程序的特定点（例如函数或事件）执行自定义代码，以实现更灵活的功能扩展和定制化。<strong>钩子通常与回调函数结合使用，以实现特定的业务逻辑或功能</strong>。</li>
+</ul>
+<p>当涉及到回调函数和hook时，一段简单的PHP代码示例来说明它们的工作方式：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// 回调函数示例
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>($name, $callback) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Hello, &#34;</span> <span style="color:#f92672">.</span> $name <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;! &#34;</span>;
+</span></span><span style="display:flex;"><span>  $callback();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">goodbye</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Goodbye!&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 使用回调函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">greet</span>(<span style="color:#e6db74">&#34;Alice&#34;</span>, <span style="color:#e6db74">&#34;goodbye&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Hook示例
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$hooks <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">add_hook</span>($hook_name, $callback) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">global</span> $hooks;
+</span></span><span style="display:flex;"><span>  $hooks[$hook_name][] <span style="color:#f92672">=</span> $callback;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">run_hook</span>($hook_name) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">global</span> $hooks;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($hooks[$hook_name])) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($hooks[$hook_name] <span style="color:#66d9ef">as</span> $callback) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">call_user_func</span>($callback);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 添加Hook
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">add_hook</span>(<span style="color:#e6db74">&#39;before_greet&#39;</span>, <span style="color:#e6db74">&#39;goodbye&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 运行Hook
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">run_hook</span>(<span style="color:#e6db74">&#39;before_greet&#39;</span>);
+</span></span></code></pre></div><p>在这个简单的示例中，首先定义了一个<code>greet</code>函数，它接受一个名字和一个回调函数作为参数。当调用<code>greet</code>函数时，它会打印问候语并执行传递的回调函数。</p>
+<p>接着我们定义了一个简单的Hook系统。我们有两个函数<code>add_hook</code>用于添加Hook，<code>run_hook</code>用于运行Hook。我们可以通过<code>add_hook</code>函数添加钩子，并通过<code>run_hook</code>函数运行特定的钩子。在示例中，我们添加了一个名为&rsquo;before_greet&rsquo;的Hook，并在运行时执行了之前定义的<code>goodbye</code>回调函数。</p>
+<blockquote>
+<p>可以将钩子（hook）理解为一个数组的概念。在实际编程中，通常会使用数组或类似数据结构来存储钩子的名称和与之关联的回调函数。通过将钩子名称作为数组的键，将回调函数作为数组的值，可以方便地管理和执行钩子。
+当需要执行特定钩子时，只需通过钩子名称在数组中查找对应的回调函数，并依次执行它们。这种方式使得钩子系统更加灵活和可扩展，能够方便地添加、删除或修改钩子，从而实现定制化的功能扩展和业务逻辑。
+因此，可以将钩子视为一个包含钩子名称和回调函数的关联数组，用于实现程序的扩展性和定制化。希望这个解释能帮助您更好地理解钩子的概念。</p>
+</blockquote>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

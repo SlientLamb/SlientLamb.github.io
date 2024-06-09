@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>建站笔记01 Web代理  服务器服务管理   Linux文件系统 - </title><meta name="Description" content="This is my cool site"><meta property="og:title" content="建站笔记01 Web代理  服务器服务管理   Linux文件系统" />
+<meta property="og:description" content="安装WordPress需要的LNMP环境 service nginx start错误退出
+systemctl status nginx.service查看状态nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)怀疑是80端口被占用
+lsof -i:80COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAMEapache2 951 root 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 297082 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 297083 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 297084 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 297085 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 297086 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 303510 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 305315 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://slientlamb.github.io/post/61914580/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-12-05T13:42:56+00:00" />
+<meta property="article:modified_time" content="2021-12-05T13:42:56+00:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="建站笔记01 Web代理  服务器服务管理   Linux文件系统"/>
+<meta name="twitter:description" content="安装WordPress需要的LNMP环境 service nginx start错误退出
+systemctl status nginx.service查看状态nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)怀疑是80端口被占用
+lsof -i:80COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAMEapache2 951 root 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 297082 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 297083 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 297084 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 297085 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 297086 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 303510 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)apache2 305315 www-data 4u IPv6 25687 0t0 TCP *:http (LISTEN)"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://slientlamb.github.io/post/61914580/" /><link rel="prev" href="https://slientlamb.github.io/post/55320166/" /><link rel="next" href="https://slientlamb.github.io/post/64075400/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "建站笔记01 Web代理  服务器服务管理   Linux文件系统",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/slientlamb.github.io\/post\/61914580\/"
+        },"genre": "post","wordcount":  120 ,
+        "url": "https:\/\/slientlamb.github.io\/post\/61914580\/","datePublished": "2021-12-05T13:42:56+00:00","dateModified": "2021-12-05T13:42:56+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">rxgltc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">rxgltc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">建站笔记01 Web代理  服务器服务管理   Linux文件系统</h1><div class="content" id="content"><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="安装wordpress需要的lnmp环境">安装WordPress需要的LNMP环境</h2>
+<p><code>service nginx start</code><!-- raw HTML omitted -->错误退出</p>
+<p><code>systemctl status nginx.service</code><!-- raw HTML omitted -->查看状态<!-- raw HTML omitted -->nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)<!-- raw HTML omitted -->怀疑是80端口被占用</p>
+<p><code>lsof -i:80</code><!-- raw HTML omitted -->COMMAND    PID     USER   FD   TYPE DEVICE SIZE/OFF NODE NAME<!-- raw HTML omitted -->apache2    951     root    4u  IPv6  25687      0t0  TCP *:http (LISTEN)<!-- raw HTML omitted -->apache2 297082 www-data    4u  IPv6  25687      0t0  TCP *:http (LISTEN)<!-- raw HTML omitted -->apache2 297083 www-data    4u  IPv6  25687      0t0  TCP *:http (LISTEN)<!-- raw HTML omitted -->apache2 297084 www-data    4u  IPv6  25687      0t0  TCP *:http (LISTEN)<!-- raw HTML omitted -->apache2 297085 www-data    4u  IPv6  25687      0t0  TCP *:http (LISTEN)<!-- raw HTML omitted -->apache2 297086 www-data    4u  IPv6  25687      0t0  TCP *:http (LISTEN)<!-- raw HTML omitted -->apache2 303510 www-data    4u  IPv6  25687      0t0  TCP *:http (LISTEN)<!-- raw HTML omitted -->apache2 305315 www-data    4u  IPv6  25687      0t0  TCP *:http (LISTEN)</p>
+<p><code>fuser -k 80/tcp</code><!-- raw HTML omitted -->尝试关闭80端口进程发现Apache服务会自启</p>
+<p>转换思路 发现apache2已安装，也是服务器代理</p>
+<hr>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="apache2环境下安装wordpress">Apache2环境下安装Wordpress</h2>
+<p>主目录 <code>var/www/html</code><!-- raw HTML omitted -->wget WP<!-- raw HTML omitted -->tar<!-- raw HTML omitted -->mv <!-- raw HTML omitted -->http访问 404</p>
+<p>查看APACHE2错误日志<!-- raw HTML omitted -->cat /var/log/apache2/error.log<!-- raw HTML omitted -->没找到问题转换思路</p>
+<hr>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="查看apache配置">查看Apache配置</h2>
+<p><code>etc/apache2/apache2.conf</code><!-- raw HTML omitted -->修改后，可以访问</p>
+<hr>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="apache怎么知道去访问那个文件夹">Apache怎么知道去访问那个文件夹</h2>
+<p><code>/etc/apache2/sites-enabled</code>目录下的配置文件 000-default.conf:<!-- raw HTML omitted -->通过DocumentRoot指定的默认目录：<code>/var/www/html</code><!-- raw HTML omitted -->从/var/www/nextcloud 改为 /var/www/wordpress</p>
+<p>解决问题。</p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

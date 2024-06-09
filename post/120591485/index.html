@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Q&amp;A WSL2使用Kex窗口模式  报错连接失败 - </title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Q&amp;A WSL2使用Kex窗口模式  报错连接失败" />
+<meta property="og:description" content="Q：报错如下 使用窗口模式时kex --win
+Error connecting to the KeX server. Please try &#34;kex start&#34; to start the service. If the server fails to start, please try &#34;kex kill&#34; or restart your WSL2 session and try again. A： 重新挂载/tmp/.X11-unixsudo mount -o remount,rw /tmp/.X11-unix-o remount：将一个已经挂下的档案系统重新用不同的方式挂上。例如原先是唯读的系统，现在用可读写的模式重新挂上。-o rw：用可读写模式挂上。
+然后vncserverkex" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://slientlamb.github.io/post/120591485/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-04-04T02:42:02+00:00" />
+<meta property="article:modified_time" content="2023-04-04T02:42:02+00:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Q&amp;A WSL2使用Kex窗口模式  报错连接失败"/>
+<meta name="twitter:description" content="Q：报错如下 使用窗口模式时kex --win
+Error connecting to the KeX server. Please try &#34;kex start&#34; to start the service. If the server fails to start, please try &#34;kex kill&#34; or restart your WSL2 session and try again. A： 重新挂载/tmp/.X11-unixsudo mount -o remount,rw /tmp/.X11-unix-o remount：将一个已经挂下的档案系统重新用不同的方式挂上。例如原先是唯读的系统，现在用可读写的模式重新挂上。-o rw：用可读写模式挂上。
+然后vncserverkex"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://slientlamb.github.io/post/120591485/" /><link rel="prev" href="https://slientlamb.github.io/post/110963935/" /><link rel="next" href="https://slientlamb.github.io/post/83953847/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Q\u0026A WSL2使用Kex窗口模式  报错连接失败",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/slientlamb.github.io\/post\/120591485\/"
+        },"genre": "post","wordcount":  44 ,
+        "url": "https:\/\/slientlamb.github.io\/post\/120591485\/","datePublished": "2023-04-04T02:42:02+00:00","dateModified": "2023-04-04T02:42:02+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">rxgltc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">rxgltc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">Q&amp;A WSL2使用Kex窗口模式  报错连接失败</h1><div class="content" id="content"><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="q报错如下">Q：报错如下</h2>
+<p>使用窗口模式时<code>kex --win</code></p>
+<pre tabindex="0"><code>Error connecting to the KeX server.
+Please try &#34;kex start&#34; to start the service.
+If the server fails to start, please try &#34;kex kill&#34; or restart your WSL2 session and try again.
+</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="a">A：</h2>
+<p>重新挂载/tmp/.X11-unix<!-- raw HTML omitted --><code>sudo mount -o remount,rw /tmp/.X11-unix</code><!-- raw HTML omitted -->-o remount：将一个已经挂下的档案系统重新用不同的方式挂上。例如原先是唯读的系统，现在用可读写的模式重新挂上。<!-- raw HTML omitted -->-o rw：用可读写模式挂上。</p>
+<p>然后<!-- raw HTML omitted --><code>vncserver</code><!-- raw HTML omitted --><code>kex</code></p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

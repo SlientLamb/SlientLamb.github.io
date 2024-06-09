@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Q&amp;A Linux服务器的上行和下行宽带 - </title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Q&amp;A Linux服务器的上行和下行宽带" />
+<meta property="og:description" content="speedtest-cli 网上查出speedtest-cli是一个用Python编写的轻量级Linux命令行工具，在Python2.4至3.4版本下均可运行。它基于Speedtest.net的基础架构来测量网络的上/下行速率。ubuntu@ip:~$ pip install speedtest-cli安装完成后提示： :::warning WARNING: The scripts speedtest and speedtest-cli are installed in &lsquo;/home/ubuntu/.local/bin&rsquo; which is not on PATH. Consider adding this directory to PATH or, if you prefer to suppress this warning, use &ndash;no-warn-script-location. ::: 告警：speedtest 和 speedtest-cli 脚本安装在/home/ubuntu/.local/bin目录下，该目录不在PATH环境变量中。 考虑添加该目录至PATH环境变量中，或者你想禁止该告警，使用--no-warn-script-location
+安装就完成了。
+find命令 想探究一下这些脚本究竟安装到哪里了，其实根据Linux的文件目录以及/home/ubuntu/.local/bin就能知道了，但是想要记录一下 find 命令的使用。
+find /home -name &quot;*speed*&quot; 指定在/home 目录下查找名字包含 speed 的文件
+ubuntu@ip:~$ find /home -name &#34;*speed*&#34; /home/ubuntu/.local/lib/python3.8/site-packages/speedtest_cli.py /home/ubuntu/.local/lib/python3.8/site-packages/speedtest.py /home/ubuntu/.local/lib/python3.8/site-packages/__pycache__/speedtest_cli.cpython-38.pyc /home/ubuntu/.local/lib/python3.8/site-packages/__pycache__/speedtest.cpython-38.pyc /home/ubuntu/.local/lib/python3.8/site-packages/speedtest_cli-2.1.3.dist-info /home/ubuntu/.local/bin/speedtest-cli /home/ubuntu/.local/bin/speedtest 跳转到目录下即可执行命令。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://slientlamb.github.io/post/65670586/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-01-25T12:02:11+00:00" />
+<meta property="article:modified_time" content="2022-01-25T12:02:11+00:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Q&amp;A Linux服务器的上行和下行宽带"/>
+<meta name="twitter:description" content="speedtest-cli 网上查出speedtest-cli是一个用Python编写的轻量级Linux命令行工具，在Python2.4至3.4版本下均可运行。它基于Speedtest.net的基础架构来测量网络的上/下行速率。ubuntu@ip:~$ pip install speedtest-cli安装完成后提示： :::warning WARNING: The scripts speedtest and speedtest-cli are installed in &lsquo;/home/ubuntu/.local/bin&rsquo; which is not on PATH. Consider adding this directory to PATH or, if you prefer to suppress this warning, use &ndash;no-warn-script-location. ::: 告警：speedtest 和 speedtest-cli 脚本安装在/home/ubuntu/.local/bin目录下，该目录不在PATH环境变量中。 考虑添加该目录至PATH环境变量中，或者你想禁止该告警，使用--no-warn-script-location
+安装就完成了。
+find命令 想探究一下这些脚本究竟安装到哪里了，其实根据Linux的文件目录以及/home/ubuntu/.local/bin就能知道了，但是想要记录一下 find 命令的使用。
+find /home -name &quot;*speed*&quot; 指定在/home 目录下查找名字包含 speed 的文件
+ubuntu@ip:~$ find /home -name &#34;*speed*&#34; /home/ubuntu/.local/lib/python3.8/site-packages/speedtest_cli.py /home/ubuntu/.local/lib/python3.8/site-packages/speedtest.py /home/ubuntu/.local/lib/python3.8/site-packages/__pycache__/speedtest_cli.cpython-38.pyc /home/ubuntu/.local/lib/python3.8/site-packages/__pycache__/speedtest.cpython-38.pyc /home/ubuntu/.local/lib/python3.8/site-packages/speedtest_cli-2.1.3.dist-info /home/ubuntu/.local/bin/speedtest-cli /home/ubuntu/.local/bin/speedtest 跳转到目录下即可执行命令。"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://slientlamb.github.io/post/65670586/" /><link rel="prev" href="https://slientlamb.github.io/post/64075400/" /><link rel="next" href="https://slientlamb.github.io/post/68619857/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Q\u0026A Linux服务器的上行和下行宽带",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/slientlamb.github.io\/post\/65670586\/"
+        },"genre": "post","wordcount":  84 ,
+        "url": "https:\/\/slientlamb.github.io\/post\/65670586\/","datePublished": "2022-01-25T12:02:11+00:00","dateModified": "2022-01-25T12:02:11+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">rxgltc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">rxgltc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">Q&amp;A Linux服务器的上行和下行宽带</h1><div class="content" id="content"><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="speedtest-cli">speedtest-cli</h2>
+<p>网上查出speedtest-cli是一个用Python编写的轻量级Linux命令行工具，在Python2.4至3.4版本下均可运行。它基于Speedtest.net的基础架构来测量网络的上/下行速率。<!-- raw HTML omitted --><code>ubuntu@ip:~$ pip install speedtest-cli</code><!-- raw HTML omitted -->安装完成后提示：
+:::warning
+WARNING: The scripts speedtest and speedtest-cli are installed in &lsquo;/home/ubuntu/.local/bin&rsquo; which is not on PATH.<!-- raw HTML omitted -->  Consider adding this directory to PATH or, if you prefer to suppress this warning, use &ndash;no-warn-script-location.
+:::
+告警：speedtest 和 speedtest-cli 脚本安装在<code>/home/ubuntu/.local/bin</code>目录下，该目录不在PATH环境变量中。<!-- raw HTML omitted -->  考虑添加该目录至PATH环境变量中，或者你想禁止该告警，使用<code>--no-warn-script-location</code></p>
+<p>安装就完成了。</p>
+<hr>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="find命令">find命令</h2>
+<p>想探究一下这些脚本究竟安装到哪里了，其实根据Linux的文件目录以及<code>/home/ubuntu/.local/bin</code>就能知道了，但是想要记录一下 find 命令的使用。</p>
+<p><code>find /home -name &quot;*speed*&quot;</code><!-- raw HTML omitted --> 指定在/home 目录下查找名字包含 speed 的文件</p>
+<pre tabindex="0"><code>ubuntu@ip:~$ find /home -name &#34;*speed*&#34;
+/home/ubuntu/.local/lib/python3.8/site-packages/speedtest_cli.py
+/home/ubuntu/.local/lib/python3.8/site-packages/speedtest.py
+/home/ubuntu/.local/lib/python3.8/site-packages/__pycache__/speedtest_cli.cpython-38.pyc
+/home/ubuntu/.local/lib/python3.8/site-packages/__pycache__/speedtest.cpython-38.pyc
+/home/ubuntu/.local/lib/python3.8/site-packages/speedtest_cli-2.1.3.dist-info
+/home/ubuntu/.local/bin/speedtest-cli
+/home/ubuntu/.local/bin/speedtest
+</code></pre><p>跳转到目录下即可执行命令。</p>
+<hr>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="env命令--echo命令">env命令  echo命令</h2>
+<blockquote>
+<p><strong>env命令</strong> 用于显示系统中已存在的环境变量，以及在定义的环境中执行指令。该命令只使用&quot;-&ldquo;作为参数选项时，隐藏了选项&rdquo;-i&quot;的功能。若没有设置任何选项和参数时，则直接显示当前的环境变量。
+如果使用env命令在新环境中执行指令时，会因为没有定义环境变量&quot;PATH&quot;而提示错误信息&quot;such file or directory&quot;。此时，用户可以重新定义一个新的&quot;PATH&quot;或者使用绝对路径。</p>
+</blockquote>
+<blockquote>
+<p>-i：开始一个新的空的环境； -u&lt;变量名&gt;：从当前环境中删除指定的变量。</p>
+</blockquote>
+<p><code>echo $PATH</code></p>
+<blockquote>
+<p><strong>echo命令</strong> 用于在shell中打印shell变量的值，或者直接输出指定的字符串。linux的echo命令，在shell编程中极为常用, 在终端下打印变量value的时候也是常常用到的，因此有必要了解下echo的用法echo命令的功能是在显示器上显示一段文字，一般起到一个提示的作用。</p>
+</blockquote>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

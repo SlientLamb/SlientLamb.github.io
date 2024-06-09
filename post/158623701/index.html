@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Q&amp;A COM和DCOM - </title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Q&amp;A COM和DCOM" />
+<meta property="og:description" content="Q1：Windows相关技术中的COM和DCOM概念是什么 A： 在Windows中，DCOM代表分布式组件对象模型（Distributed Component Object Model），而COM代表组件对象模型（Component Object Model）。
+COM（组件对象模型）：COM是一种面向对象的编程模型，用于创建可重用的软件组件。它允许开发人员将代码封装在独立的组件中，这些组件可以被其他程序调用和重复使用。COM组件可以通过接口进行通信，提供了一种灵活且可扩展的方式来构建应用程序。
+DCOM（分布式组件对象模型）：DCOM是COM的扩展，它允许在分布式环境中进行通信和交互。DCOM允许远程计算机上的应用程序通过网络进行通信，并调用远程计算机上的COM组件。这使得在不同计算机之间进行分布式编程和通信变得更加容易。
+总的来说，COM提供了一种组件化的编程模型，而DCOM扩展了COM的功能，使得在分布式环境中进行通信和调用更加方便和灵活。这两种技术在Windows平台上被广泛应用于开发应用程序和构建复杂的系统。 Q2：能举例使用COM或DCOM技术的常见应用或系统吗，已经该模型在应用中起到了什么样的作用 A： COM和DCOM技术在Windows系统中有许多应用和系统中得到了广泛应用。以下是一些常见的应用和系统：
+Microsoft Office：Microsoft Office套件中的各种应用程序（如Word、Excel、PowerPoint等）使用COM技术来提供可编程的对象模型，使开发人员可以通过编程方式操纵和操作Office应用程序。 Internet Explorer：Internet Explorer浏览器使用COM技术来支持插件和扩展功能，使开发人员能够创建自定义的浏览器插件。 Windows Shell：Windows Shell（包括资源管理器等）使用COM技术来提供对Windows操作系统的访问和控制，例如创建自定义的Shell扩展程序。 Active Directory：Active Directory服务使用DCOM技术来支持分布式环境中的目录服务，实现对用户、计算机和其他资源的管理和访问控制。 Microsoft Exchange Server：Microsoft Exchange Server使用DCOM技术来支持邮件传递、日历共享等功能，在分布式环境中提供协作和通信服务。 在这些应用和系统中，COM和DCOM技术起到了关键作用，使得不同组件之间可以进行通信、交互和协作。它们提供了一种灵活、可重用的编程模型，帮助开发人员构建复杂的应用程序和系统，同时支持分布式环境下的组件通信和调用。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://slientlamb.github.io/post/158623701/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-02-17T01:19:49+00:00" />
+<meta property="article:modified_time" content="2024-02-17T01:19:49+00:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Q&amp;A COM和DCOM"/>
+<meta name="twitter:description" content="Q1：Windows相关技术中的COM和DCOM概念是什么 A： 在Windows中，DCOM代表分布式组件对象模型（Distributed Component Object Model），而COM代表组件对象模型（Component Object Model）。
+COM（组件对象模型）：COM是一种面向对象的编程模型，用于创建可重用的软件组件。它允许开发人员将代码封装在独立的组件中，这些组件可以被其他程序调用和重复使用。COM组件可以通过接口进行通信，提供了一种灵活且可扩展的方式来构建应用程序。
+DCOM（分布式组件对象模型）：DCOM是COM的扩展，它允许在分布式环境中进行通信和交互。DCOM允许远程计算机上的应用程序通过网络进行通信，并调用远程计算机上的COM组件。这使得在不同计算机之间进行分布式编程和通信变得更加容易。
+总的来说，COM提供了一种组件化的编程模型，而DCOM扩展了COM的功能，使得在分布式环境中进行通信和调用更加方便和灵活。这两种技术在Windows平台上被广泛应用于开发应用程序和构建复杂的系统。 Q2：能举例使用COM或DCOM技术的常见应用或系统吗，已经该模型在应用中起到了什么样的作用 A： COM和DCOM技术在Windows系统中有许多应用和系统中得到了广泛应用。以下是一些常见的应用和系统：
+Microsoft Office：Microsoft Office套件中的各种应用程序（如Word、Excel、PowerPoint等）使用COM技术来提供可编程的对象模型，使开发人员可以通过编程方式操纵和操作Office应用程序。 Internet Explorer：Internet Explorer浏览器使用COM技术来支持插件和扩展功能，使开发人员能够创建自定义的浏览器插件。 Windows Shell：Windows Shell（包括资源管理器等）使用COM技术来提供对Windows操作系统的访问和控制，例如创建自定义的Shell扩展程序。 Active Directory：Active Directory服务使用DCOM技术来支持分布式环境中的目录服务，实现对用户、计算机和其他资源的管理和访问控制。 Microsoft Exchange Server：Microsoft Exchange Server使用DCOM技术来支持邮件传递、日历共享等功能，在分布式环境中提供协作和通信服务。 在这些应用和系统中，COM和DCOM技术起到了关键作用，使得不同组件之间可以进行通信、交互和协作。它们提供了一种灵活、可重用的编程模型，帮助开发人员构建复杂的应用程序和系统，同时支持分布式环境下的组件通信和调用。"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://slientlamb.github.io/post/158623701/" /><link rel="prev" href="https://slientlamb.github.io/post/63251819/" /><link rel="next" href="https://slientlamb.github.io/post/159192175/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Q\u0026A COM和DCOM",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/slientlamb.github.io\/post\/158623701\/"
+        },"genre": "post","wordcount":  32 ,
+        "url": "https:\/\/slientlamb.github.io\/post\/158623701\/","datePublished": "2024-02-17T01:19:49+00:00","dateModified": "2024-02-17T01:19:49+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">rxgltc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">rxgltc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">Q&amp;A COM和DCOM</h1><div class="content" id="content"><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="q1windows相关技术中的com和dcom概念是什么">Q1：Windows相关技术中的COM和DCOM概念是什么</h1>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="a">A：</h1>
+<p>在Windows中，DCOM代表分布式组件对象模型（Distributed Component Object Model），而COM代表组件对象模型（Component Object Model）。</p>
+<ul>
+<li>
+<p><strong>COM（组件对象模型）</strong>：COM是一种面向对象的编程模型，用于创建可重用的软件组件。它允许开发人员将代码封装在独立的组件中，这些组件可以被其他程序调用和重复使用。COM组件可以通过接口进行通信，提供了一种灵活且可扩展的方式来构建应用程序。</p>
+</li>
+<li>
+<p><strong>DCOM（分布式组件对象模型）</strong>：DCOM是COM的扩展，它允许在分布式环境中进行通信和交互。DCOM允许远程计算机上的应用程序通过网络进行通信，并调用远程计算机上的COM组件。这使得在不同计算机之间进行分布式编程和通信变得更加容易。</p>
+</li>
+</ul>
+<p>总的来说，COM提供了一种组件化的编程模型，而DCOM扩展了COM的功能，使得在分布式环境中进行通信和调用更加方便和灵活。这两种技术在Windows平台上被广泛应用于开发应用程序和构建复杂的系统。
+<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="q2能举例使用com或dcom技术的常见应用或系统吗已经该模型在应用中起到了什么样的作用">Q2：能举例使用COM或DCOM技术的常见应用或系统吗，已经该模型在应用中起到了什么样的作用</h1>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="a-1">A：</h1>
+<p>COM和DCOM技术在Windows系统中有许多应用和系统中得到了广泛应用。以下是一些常见的应用和系统：</p>
+<ol>
+<li><strong>Microsoft Office</strong>：Microsoft Office套件中的各种应用程序（如Word、Excel、PowerPoint等）使用COM技术来提供可编程的对象模型，使开发人员可以通过编程方式操纵和操作Office应用程序。</li>
+<li><strong>Internet Explorer</strong>：Internet Explorer浏览器使用COM技术来支持插件和扩展功能，使开发人员能够创建自定义的浏览器插件。</li>
+<li><strong>Windows Shell</strong>：Windows Shell（包括资源管理器等）使用COM技术来提供对Windows操作系统的访问和控制，例如创建自定义的Shell扩展程序。</li>
+<li><strong>Active Directory</strong>：Active Directory服务使用DCOM技术来支持分布式环境中的目录服务，实现对用户、计算机和其他资源的管理和访问控制。</li>
+<li><strong>Microsoft Exchange Server</strong>：Microsoft Exchange Server使用DCOM技术来支持邮件传递、日历共享等功能，在分布式环境中提供协作和通信服务。</li>
+</ol>
+<p>在这些应用和系统中，COM和DCOM技术起到了关键作用，使得不同组件之间可以进行通信、交互和协作。它们提供了一种灵活、可重用的编程模型，帮助开发人员构建复杂的应用程序和系统，同时支持分布式环境下的组件通信和调用。</p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

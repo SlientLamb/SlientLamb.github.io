@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>密评（一） - </title><meta name="Description" content="This is my cool site"><meta property="og:title" content="密评（一）" />
+<meta property="og:description" content="密评系列文章（一） C0 为什么写这些文章 从事密评工作一年多，期间从事了诸多类型的项目，省级IDC，各部的OA和定制化系统等。在这个过程中耗费时间的并不是技术问题，而是和甲方或者被评测方的对接，因为密评作为近年来出现的事物，各方对其的认识不够，导致想要通过密评的人也不知道需要做些什么。故萌生出了写一系列文章，帮助非行内人员理解密评。 C1 术语定义、系列文章结构 这系列文章是针对非行内人员了解和认识密评所写的，所以我会介绍说明相应的技术，但不会涉及技术细节，同时尽量采取简明的叙述方式让阅读轻松明了。以下是为了方便阅读所使用的一些简称和术语： 密评：全称“商用密码应用安全性评估”，系列文章中使用简称。 密码：指加密、哈希等密码技术，日常概念中登录用的“密码”文章中统一称为口令。 甲方：指系统的实际使用方。 乙方：指应用系统的开发方，一般是开发公司或者集成公司。 第三方：指密评公司。 商密证书：指通过国家密码管理局质量检测后颁发的证书，全称为商用密码产品认证证书（或“商用密码产品型号证书”），想要通过密评务必要使用具备商密证书的软硬件密码产品，否则可能导致高风险项。 系列文章会分为三块，首先是这篇密评的基础介绍，其次是密评的各层面要求的指标，最后说明密评的量化评估规则。其中密评各层面的指标中会穿插高风险判定指引的的高风险项。 C3 密评相关概念 3.1 为什么要进行密评 《中华人民共和国密码法》第二十七条规定：法律、行政法规和国家有关规定要求使用商用密码进行保护的关键信息基础设施，其运营者应当使用商用密码进行保护，自行或者委托商用密码检测机构开展商用密码应用安全性评估。商用密码应用安全性评估应当与关键信息基础设施安全检测评估、网络安全等级测评制度相衔接，避免重复评估、测评。 简要的说，《密码法》、《网络安全法》、《网络安全等级保护条例》等法律强调了**等级保护三级及以上**信息系统、**关键信息基础设施**都要做密评。 3.2 密评通过的条件 密评通过需要满足GB/T 39786-2021《信息安全技术 信息系统密码应用基本要求》，同时根据《商用密码应用安全性评估量化评估规则》得分60以上，且无《信息系统密码应用高风险判定指引》中的高风险项即为通过。 60分以上，且无高风险项是通过密评的条件。 参考文件 GB/T 39786-2021《信息安全技术 信息系统密码应用基本要求》 信息系统密码应用高风险判定指引 商用密码应用安全性评估量化评估规则 3.3密评公司、密码厂商等 国家密码管理局维护的《商用密码应用安全性评估试点机构目录》中的机构才有实施密评的资质，共计48家。（https://www.oscca.gov.cn/sca/xwdt/2021-06/11/content_1060863.shtml） 经过认证，具备商密证书的产品可以在商用密码认证业务网上查询到。（http://service.scctc.org.cn） 3.4配合密评的人员 密评实施人员会在密评前期和现场询问关于系统各方面的情况： 1、机房物理情况，需要进入机房查验————机房管理人员 2、了解系统的物理服务器位置，管理方式，以及网络架构和采用的相关密码产品等————系统运维人员 3、系统采用的数据库，以及数据库的结构以及对应数据存储在哪张表单，以及数据存储的加密方式等————开发人员 4、关于密码设备和密钥管理相关的制度————甲方单位 结语 这篇文章定义了后续文章使用的术语和结构，同时阐述了为什么要进行密评和通过密评的条件，以及密评相关的基础知识等。后续会根据国家标准GB/T 39786-2021《信息安全技术 信息系统密码应用基本要求》讲述密评各层面的指标。 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://slientlamb.github.io/post/%E5%AF%86%E8%AF%84%E4%B8%80/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-28T23:13:38+08:00" />
+<meta property="article:modified_time" content="2022-06-28T23:13:38+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="密评（一）"/>
+<meta name="twitter:description" content="密评系列文章（一） C0 为什么写这些文章 从事密评工作一年多，期间从事了诸多类型的项目，省级IDC，各部的OA和定制化系统等。在这个过程中耗费时间的并不是技术问题，而是和甲方或者被评测方的对接，因为密评作为近年来出现的事物，各方对其的认识不够，导致想要通过密评的人也不知道需要做些什么。故萌生出了写一系列文章，帮助非行内人员理解密评。 C1 术语定义、系列文章结构 这系列文章是针对非行内人员了解和认识密评所写的，所以我会介绍说明相应的技术，但不会涉及技术细节，同时尽量采取简明的叙述方式让阅读轻松明了。以下是为了方便阅读所使用的一些简称和术语： 密评：全称“商用密码应用安全性评估”，系列文章中使用简称。 密码：指加密、哈希等密码技术，日常概念中登录用的“密码”文章中统一称为口令。 甲方：指系统的实际使用方。 乙方：指应用系统的开发方，一般是开发公司或者集成公司。 第三方：指密评公司。 商密证书：指通过国家密码管理局质量检测后颁发的证书，全称为商用密码产品认证证书（或“商用密码产品型号证书”），想要通过密评务必要使用具备商密证书的软硬件密码产品，否则可能导致高风险项。 系列文章会分为三块，首先是这篇密评的基础介绍，其次是密评的各层面要求的指标，最后说明密评的量化评估规则。其中密评各层面的指标中会穿插高风险判定指引的的高风险项。 C3 密评相关概念 3.1 为什么要进行密评 《中华人民共和国密码法》第二十七条规定：法律、行政法规和国家有关规定要求使用商用密码进行保护的关键信息基础设施，其运营者应当使用商用密码进行保护，自行或者委托商用密码检测机构开展商用密码应用安全性评估。商用密码应用安全性评估应当与关键信息基础设施安全检测评估、网络安全等级测评制度相衔接，避免重复评估、测评。 简要的说，《密码法》、《网络安全法》、《网络安全等级保护条例》等法律强调了**等级保护三级及以上**信息系统、**关键信息基础设施**都要做密评。 3.2 密评通过的条件 密评通过需要满足GB/T 39786-2021《信息安全技术 信息系统密码应用基本要求》，同时根据《商用密码应用安全性评估量化评估规则》得分60以上，且无《信息系统密码应用高风险判定指引》中的高风险项即为通过。 60分以上，且无高风险项是通过密评的条件。 参考文件 GB/T 39786-2021《信息安全技术 信息系统密码应用基本要求》 信息系统密码应用高风险判定指引 商用密码应用安全性评估量化评估规则 3.3密评公司、密码厂商等 国家密码管理局维护的《商用密码应用安全性评估试点机构目录》中的机构才有实施密评的资质，共计48家。（https://www.oscca.gov.cn/sca/xwdt/2021-06/11/content_1060863.shtml） 经过认证，具备商密证书的产品可以在商用密码认证业务网上查询到。（http://service.scctc.org.cn） 3.4配合密评的人员 密评实施人员会在密评前期和现场询问关于系统各方面的情况： 1、机房物理情况，需要进入机房查验————机房管理人员 2、了解系统的物理服务器位置，管理方式，以及网络架构和采用的相关密码产品等————系统运维人员 3、系统采用的数据库，以及数据库的结构以及对应数据存储在哪张表单，以及数据存储的加密方式等————开发人员 4、关于密码设备和密钥管理相关的制度————甲方单位 结语 这篇文章定义了后续文章使用的术语和结构，同时阐述了为什么要进行密评和通过密评的条件，以及密评相关的基础知识等。后续会根据国家标准GB/T 39786-2021《信息安全技术 信息系统密码应用基本要求》讲述密评各层面的指标。 "/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://slientlamb.github.io/post/%E5%AF%86%E8%AF%84%E4%B8%80/" /><link rel="prev" href="https://slientlamb.github.io/post/%E5%B0%8F%E5%8C%BA%E5%90%8E%E9%97%A8%E7%9A%84%E9%B8%AD%E8%84%96%E6%91%8A/" /><link rel="next" href="https://slientlamb.github.io/post/63411161/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "密评（一）",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/slientlamb.github.io\/post\/%E5%AF%86%E8%AF%84%E4%B8%80\/"
+        },"genre": "post","keywords": "密评","wordcount":  45 ,
+        "url": "https:\/\/slientlamb.github.io\/post\/%E5%AF%86%E8%AF%84%E4%B8%80\/","datePublished": "2022-06-28T23:13:38+08:00","dateModified": "2022-06-28T23:13:38+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">rxgltc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">rxgltc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">密评（一）</h1><div class="content" id="content"><h1 id="密评系列文章一">密评系列文章（一）</h1>
+<h2 id="c0-为什么写这些文章">C0 为什么写这些文章</h2>
+<pre tabindex="0"><code>从事密评工作一年多，期间从事了诸多类型的项目，省级IDC，各部的OA和定制化系统等。在这个过程中耗费时间的并不是技术问题，而是和甲方或者被评测方的对接，因为密评作为近年来出现的事物，各方对其的认识不够，导致想要通过密评的人也不知道需要做些什么。故萌生出了写一系列文章，帮助非行内人员理解密评。
+</code></pre><h2 id="c1-术语定义系列文章结构">C1 术语定义、系列文章结构</h2>
+<pre tabindex="0"><code>这系列文章是针对非行内人员了解和认识密评所写的，所以我会介绍说明相应的技术，但不会涉及技术细节，同时尽量采取简明的叙述方式让阅读轻松明了。以下是为了方便阅读所使用的一些简称和术语：
+</code></pre><ul>
+<li><strong>密评</strong>：全称“商用密码应用安全性评估”，系列文章中使用简称。</li>
+<li><strong>密码</strong>：指加密、哈希等密码技术，日常概念中登录用的“密码”文章中统一称为口令。</li>
+<li><strong>甲方</strong>：指系统的实际使用方。</li>
+<li><strong>乙方</strong>：指应用系统的开发方，一般是开发公司或者集成公司。</li>
+<li><strong>第三方</strong>：指密评公司。</li>
+<li><strong>商密证书</strong>：指通过国家密码管理局质量检测后颁发的证书，全称为商用密码产品认证证书（或“商用密码产品型号证书”），想要通过密评务必要使用具备商密证书的软硬件密码产品，否则可能导致高风险项。
+系列文章会分为三块，首先是这篇密评的基础介绍，其次是密评的各层面要求的指标，最后说明密评的量化评估规则。其中密评各层面的指标中会穿插高风险判定指引的的高风险项。</li>
+</ul>
+<h2 id="c3-密评相关概念">C3 密评相关概念</h2>
+<h3 id="31-为什么要进行密评">3.1 为什么要进行密评</h3>
+<blockquote>
+<pre tabindex="0"><code>《中华人民共和国密码法》第二十七条规定：法律、行政法规和国家有关规定要求使用商用密码进行保护的关键信息基础设施，其运营者应当使用商用密码进行保护，自行或者委托商用密码检测机构开展商用密码应用安全性评估。商用密码应用安全性评估应当与关键信息基础设施安全检测评估、网络安全等级测评制度相衔接，避免重复评估、测评。
+</code></pre></blockquote>
+<pre tabindex="0"><code>简要的说，《密码法》、《网络安全法》、《网络安全等级保护条例》等法律强调了**等级保护三级及以上**信息系统、**关键信息基础设施**都要做密评。
+</code></pre><h3 id="32-密评通过的条件">3.2 密评通过的条件</h3>
+<pre tabindex="0"><code>密评通过需要满足GB/T 39786-2021《信息安全技术 信息系统密码应用基本要求》，同时根据《商用密码应用安全性评估量化评估规则》得分60以上，且无《信息系统密码应用高风险判定指引》中的高风险项即为通过。
+60分以上，且无高风险项是通过密评的条件。
+</code></pre><h4 id="参考文件">参考文件</h4>
+<ul>
+<li><a href="http://www.gb688.cn/bzgk/gb/newGbInfo?hcno=53282C88712CE157043B7A2C590278FC" target="_blank" rel="noopener noreffer">GB/T 39786-2021《信息安全技术 信息系统密码应用基本要求》</a>
+</li>
+<li><a href="http://www.jsmm.gov.cn/u/cms/www/202110/140924479txd.pdf" target="_blank" rel="noopener noreffer">信息系统密码应用高风险判定指引</a>
+</li>
+<li><a href="http://www.jsmm.gov.cn/u/cms/www/202110/140932001in8.pdf" target="_blank" rel="noopener noreffer">商用密码应用安全性评估量化评估规则</a>
+</li>
+</ul>
+<h3 id="33密评公司密码厂商等">3.3密评公司、密码厂商等</h3>
+<pre tabindex="0"><code>国家密码管理局维护的《商用密码应用安全性评估试点机构目录》中的机构才有实施密评的资质，共计48家。（https://www.oscca.gov.cn/sca/xwdt/2021-06/11/content_1060863.shtml）
+经过认证，具备商密证书的产品可以在商用密码认证业务网上查询到。（http://service.scctc.org.cn）
+</code></pre><h3 id="34配合密评的人员">3.4配合密评的人员</h3>
+<pre tabindex="0"><code>密评实施人员会在密评前期和现场询问关于系统各方面的情况：
+1、机房物理情况，需要进入机房查验————机房管理人员
+2、了解系统的物理服务器位置，管理方式，以及网络架构和采用的相关密码产品等————系统运维人员
+3、系统采用的数据库，以及数据库的结构以及对应数据存储在哪张表单，以及数据存储的加密方式等————开发人员
+4、关于密码设备和密钥管理相关的制度————甲方单位
+</code></pre><h2 id="结语">结语</h2>
+<pre tabindex="0"><code>这篇文章定义了后续文章使用的术语和结构，同时阐述了为什么要进行密评和通过密评的条件，以及密评相关的基础知识等。后续会根据国家标准GB/T 39786-2021《信息安全技术 信息系统密码应用基本要求》讲述密评各层面的指标。
+</code></pre></div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

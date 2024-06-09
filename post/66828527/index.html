@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Burp Lab Note:Lab: Source code disclosure via backup files - </title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Burp Lab Note:Lab: Source code disclosure via backup files" />
+<meta property="og:description" content="This lab leaks its source code via backup files in a hidden directory. To solve the lab, identify and submit the database password, which is hard-coded in the leaked source code.
+这个实验室通过隐藏目录中的备份文件泄露它的源代码。解决实验室，识别并提交数据库密码，这是硬编码在泄露的源代码。
+Lab: Source code disclosure via backup files | Web Security Academy 使用Burp-target-content discovery扫描站点 只扫描出以下几种类型文件
+HTML 超文本标记 SVG/PNG/JPEG 图片 css 样式堆叠表 js 脚本 XML 可扩展标记语言：一种用于标记电子文件使其具有结构性的标记语言 text 文件夹 之后按照加~ 或改后缀名方式 没有找出
+Files for web crawlers /robots.txtand /sitemap.xml Many websites provide files at /robots." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://slientlamb.github.io/post/66828527/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-05-30T09:52:05+00:00" />
+<meta property="article:modified_time" content="2024-05-30T09:52:05+00:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Burp Lab Note:Lab: Source code disclosure via backup files"/>
+<meta name="twitter:description" content="This lab leaks its source code via backup files in a hidden directory. To solve the lab, identify and submit the database password, which is hard-coded in the leaked source code.
+这个实验室通过隐藏目录中的备份文件泄露它的源代码。解决实验室，识别并提交数据库密码，这是硬编码在泄露的源代码。
+Lab: Source code disclosure via backup files | Web Security Academy 使用Burp-target-content discovery扫描站点 只扫描出以下几种类型文件
+HTML 超文本标记 SVG/PNG/JPEG 图片 css 样式堆叠表 js 脚本 XML 可扩展标记语言：一种用于标记电子文件使其具有结构性的标记语言 text 文件夹 之后按照加~ 或改后缀名方式 没有找出
+Files for web crawlers /robots.txtand /sitemap.xml Many websites provide files at /robots."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://slientlamb.github.io/post/66828527/" /><link rel="prev" href="https://slientlamb.github.io/post/97216040/" /><link rel="next" href="https://slientlamb.github.io/post/172402171/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Burp Lab Note:Lab: Source code disclosure via backup files",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/slientlamb.github.io\/post\/66828527\/"
+        },"genre": "post","wordcount":  106 ,
+        "url": "https:\/\/slientlamb.github.io\/post\/66828527\/","datePublished": "2024-05-30T09:52:05+00:00","dateModified": "2024-05-30T09:52:05+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">rxgltc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">rxgltc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">Burp Lab Note:Lab: Source code disclosure via backup files</h1><div class="content" id="content"><p>This lab leaks its source code via backup files in a hidden directory. To solve the lab, identify and submit the database password, which is hard-coded in the leaked source code.</p>
+<p>这个实验室通过隐藏目录中的备份文件泄露它的源代码。解决实验室，识别并提交数据库密码，这是硬编码在泄露的源代码。</p>
+<p><a href="https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-via-backup-files" target="_blank" rel="noopener noreffer">Lab: Source code disclosure via backup files | Web Security Academy</a>
+</p>
+<hr>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="使用burp-target-content-discovery扫描站点">使用Burp-target-content discovery扫描站点</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/66828527_1.png"
+        data-srcset="/images/66828527_1.png, /images/66828527_1.png 1.5x, /images/66828527_1.png 2x"
+        data-sizes="auto"
+        alt="/images/66828527_1.png"
+        title="image.png" /></p>
+<p>只扫描出以下几种类型文件</p>
+<table>
+<thead>
+<tr>
+<th>HTML</th>
+<th>超文本标记</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SVG/PNG/JPEG</td>
+<td>图片</td>
+</tr>
+<tr>
+<td>css</td>
+<td>样式堆叠表</td>
+</tr>
+<tr>
+<td>js</td>
+<td>脚本</td>
+</tr>
+<tr>
+<td>XML</td>
+<td>可扩展标记语言：一种用于标记电子文件使其具有结构性的标记语言</td>
+</tr>
+<tr>
+<td>text</td>
+<td>文件夹</td>
+</tr>
+</tbody>
+</table>
+<p>之后按照加~ 或改后缀名方式 没有找出</p>
+<hr>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="files-for-web-crawlers">Files for web crawlers</h2>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="robotstxtandsitemapxml"><code>/robots.txt</code>and <code>/sitemap.xml</code></h3>
+<p>Many websites provide files at <code>/robots.txt</code> and <code>/sitemap.xml</code> to help crawlers navigate their site. Among other things, these files often list specific directories that the crawlers should skip, for example, because they may contain sensitive information.</p>
+<p>许多网站在/robots.txt 和/sitemap.xml 提供文件，以帮助爬虫导航其网站。除此之外，这些文件通常列出爬虫程序应该跳过的特定目录，例如，因为它们可能包含敏感信息。</p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

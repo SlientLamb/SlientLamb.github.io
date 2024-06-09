@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Q&amp;A  将wsl2配置为桥接模式 - </title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Q&amp;A  将wsl2配置为桥接模式" />
+<meta property="og:description" content="要将 Kali Linux WSL2 子系统设置为桥接模式，您需要执行以下步骤：
+首先，打开 PowerShell 终端并输入以下命令以停止 WSL2 子系统： wsl --shutdown 打开 Hyper-V 管理器，找到您的 WSL2 虚拟交换机并记下其名称。 在 PowerShell 终端中输入以下命令以将 WSL2 子系统转换为虚拟机： wsl --set-version &lt;distribution name&gt; 2 其中， 是您的 Kali Linux 发行版的名称。
+在 Hyper-V 管理器中创建一个新的虚拟交换机，并将其设置为外部网络。 在 PowerShell 终端中输入以下命令以将 WSL2 子系统连接到新的外部虚拟交换机： Get-NetAdapter | Where-Object {$_.InterfaceDescription -Like &#34;*WSL*&#34;} | New-NetIPAddress -IPAddress &lt;IP address&gt; -PrefixLength &lt;subnet mask&gt; -DefaultGateway &lt;gateway IP&gt; | Set-NetIPInterface -InterfaceAlias &#34;vEthernet (WSL)&#34; 其中， 是您希望为 Kali Linux 分配的 IP 地址， 是子网掩码， 是网关 IP 地址。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://slientlamb.github.io/post/124980952/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-05-17T02:53:15+00:00" />
+<meta property="article:modified_time" content="2023-05-17T02:53:15+00:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Q&amp;A  将wsl2配置为桥接模式"/>
+<meta name="twitter:description" content="要将 Kali Linux WSL2 子系统设置为桥接模式，您需要执行以下步骤：
+首先，打开 PowerShell 终端并输入以下命令以停止 WSL2 子系统： wsl --shutdown 打开 Hyper-V 管理器，找到您的 WSL2 虚拟交换机并记下其名称。 在 PowerShell 终端中输入以下命令以将 WSL2 子系统转换为虚拟机： wsl --set-version &lt;distribution name&gt; 2 其中， 是您的 Kali Linux 发行版的名称。
+在 Hyper-V 管理器中创建一个新的虚拟交换机，并将其设置为外部网络。 在 PowerShell 终端中输入以下命令以将 WSL2 子系统连接到新的外部虚拟交换机： Get-NetAdapter | Where-Object {$_.InterfaceDescription -Like &#34;*WSL*&#34;} | New-NetIPAddress -IPAddress &lt;IP address&gt; -PrefixLength &lt;subnet mask&gt; -DefaultGateway &lt;gateway IP&gt; | Set-NetIPInterface -InterfaceAlias &#34;vEthernet (WSL)&#34; 其中， 是您希望为 Kali Linux 分配的 IP 地址， 是子网掩码， 是网关 IP 地址。"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://slientlamb.github.io/post/124980952/" /><link rel="prev" href="https://slientlamb.github.io/post/55817841/" /><link rel="next" href="https://slientlamb.github.io/post/107195601/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Q\u0026A  将wsl2配置为桥接模式",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/slientlamb.github.io\/post\/124980952\/"
+        },"genre": "post","wordcount":  91 ,
+        "url": "https:\/\/slientlamb.github.io\/post\/124980952\/","datePublished": "2023-05-17T02:53:15+00:00","dateModified": "2023-05-17T02:53:15+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">rxgltc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">rxgltc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">Q&amp;A  将wsl2配置为桥接模式</h1><div class="content" id="content"><p>要将 Kali Linux WSL2 子系统设置为桥接模式，您需要执行以下步骤：</p>
+<ol>
+<li>首先，打开 PowerShell 终端并输入以下命令以停止 WSL2 子系统：</li>
+</ol>
+<pre tabindex="0"><code>wsl --shutdown
+</code></pre><ol start="2">
+<li>打开 Hyper-V 管理器，找到您的 WSL2 虚拟交换机并记下其名称。</li>
+<li>在 PowerShell 终端中输入以下命令以将 WSL2 子系统转换为虚拟机：</li>
+</ol>
+<pre tabindex="0"><code>wsl --set-version &lt;distribution name&gt; 2
+</code></pre><p>其中，<!-- raw HTML omitted --> 是您的 Kali Linux 发行版的名称。</p>
+<ol start="4">
+<li>在 Hyper-V 管理器中创建一个新的虚拟交换机，并将其设置为外部网络。</li>
+<li>在 PowerShell 终端中输入以下命令以将 WSL2 子系统连接到新的外部虚拟交换机：</li>
+</ol>
+<pre tabindex="0"><code>Get-NetAdapter | Where-Object {$_.InterfaceDescription -Like &#34;*WSL*&#34;} | New-NetIPAddress -IPAddress &lt;IP address&gt; -PrefixLength &lt;subnet mask&gt; -DefaultGateway &lt;gateway IP&gt; | Set-NetIPInterface -InterfaceAlias &#34;vEthernet (WSL)&#34;
+</code></pre><p>其中，<!-- raw HTML omitted --> 是您希望为 Kali Linux 分配的 IP 地址，<!-- raw HTML omitted --> 是子网掩码，<!-- raw HTML omitted --> 是网关 IP 地址。</p>
+<ol start="6">
+<li>最后，在 PowerShell 终端中输入以下命令以启动 WSL2 子系统：</li>
+</ol>
+<pre tabindex="0"><code>wsl
+</code></pre><p>现在您的 Kali Linux WSL2 子系统已经设置为桥接模式，外部网络可以直接访问您的子系统。</p>
+<hr>
+<p><a href="http://www.360doc.com/content/12/0121/07/33317445_1079756457.shtml" target="_blank" rel="noopener noreffer">WSL2开启桥接网络 | 逸思杂陈</a>
+<!-- raw HTML omitted --><a href="https://zhangbin.blog.csdn.net/article/details/127032633?spm=1001.2101.3001.6650.2&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-127032633-blog-127936390.235%5Ev36%5Epc_relevant_default_base3&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-127032633-blog-127936390.235%5Ev36%5Epc_relevant_default_base3&amp;utm_relevant_index=3" target="_blank" rel="noopener noreffer">【wsl2】win11基于hyber-v桥接_win11 wsl2_等风来不如迎风去的博客-CSDN博客</a>
+<!-- raw HTML omitted --><a href="https://zhuanlan.zhihu.com/p/617357186" target="_blank" rel="noopener noreffer">Win11 WSL2桥接网络实现局域网连接与Ubuntu18.04/20.04VNC桌面搭建以及Linux命令行外网代理实现</a>
+</p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
